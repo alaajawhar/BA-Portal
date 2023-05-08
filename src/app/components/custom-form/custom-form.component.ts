@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit} from '@angular/core';
+import { Component, ElementRef, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-custom-form',
@@ -10,8 +10,14 @@ export class CustomFormComponent implements OnInit {
   @Input() title: string | undefined
   @Input() subtitle: string | undefined
 
-  constructor() {}
+  constructor(private elementRef: ElementRef) {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "../assets/js/main.js";
+    this.elementRef.nativeElement.appendChild(s);
+  }
 
 }

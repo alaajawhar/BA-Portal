@@ -23,6 +23,13 @@ import { GlossaryDetailsComponent } from './screens/glossary/glossary-details/gl
 import { UserStoryDetailsComponent } from './screens/user-stories/user-story-details/user-story-details.component';
 import { UseCaseDetailsComponent } from './screens/use-cases/use-case-details/use-case-details.component';
 import { CustomFormComponent } from './components/custom-form/custom-form.component';
+import { GridModule, PagerModule } from '@syncfusion/ej2-angular-grids';
+import {DiagramModule, SymbolPaletteModule} from "@syncfusion/ej2-angular-diagrams";
+import { UseCaseDiagramCanvasComponent } from './screens/use-case-diagram/use-case-diagram-canvas/use-case-diagram-canvas.component';
+import { ScreenFlowDiagramDetailsComponent } from './screens/screen-flow-diagrams/screen-flow-diagram-details/screen-flow-diagram-details.component';
+import { ScreenMockupDetailsComponent } from './screens/screen-mockups/screen-mockup-details/screen-mockup-details.component';
+import { RequirementsComponent } from './screens/requirements/requirements.component';
+import { RequirementDetailsComponent } from './screens/requirements/requirement-details/requirement-details.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +53,17 @@ import { CustomFormComponent } from './components/custom-form/custom-form.compon
     GlossaryDetailsComponent,
     UserStoryDetailsComponent,
     UseCaseDetailsComponent,
-    CustomFormComponent
+    CustomFormComponent,
+    UseCaseDiagramCanvasComponent,
+    ScreenFlowDiagramDetailsComponent,
+    ScreenMockupDetailsComponent,
+    RequirementsComponent,
+    RequirementDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GridModule, PagerModule, SymbolPaletteModule, DiagramModule
   ],
   providers: [],
   bootstrap: [AppComponent]

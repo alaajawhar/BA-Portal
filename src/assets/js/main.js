@@ -156,9 +156,8 @@
   }
 
   /**
-   * Initiate TinyMCE Editor
-   */
-
+ * Initiate TinyMCE Editor
+*/
   var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   tinymce.init({

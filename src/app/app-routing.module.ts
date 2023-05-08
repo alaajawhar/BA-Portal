@@ -14,9 +14,20 @@ import {ActorDetailsComponent} from "./screens/actors/actor-details/actor-detail
 import {GlossaryDetailsComponent} from "./screens/glossary/glossary-details/glossary-details.component";
 import {UserStoryDetailsComponent} from "./screens/user-stories/user-story-details/user-story-details.component";
 import {UseCaseDetailsComponent} from "./screens/use-cases/use-case-details/use-case-details.component";
+import {
+  UseCaseDiagramCanvasComponent
+} from "./screens/use-case-diagram/use-case-diagram-canvas/use-case-diagram-canvas.component";
+import {
+  ScreenFlowDiagramDetailsComponent
+} from "./screens/screen-flow-diagrams/screen-flow-diagram-details/screen-flow-diagram-details.component";
+import {
+  ScreenMockupDetailsComponent
+} from "./screens/screen-mockups/screen-mockup-details/screen-mockup-details.component";
+import {RequirementsComponent} from "./screens/requirements/requirements.component";
+import {RequirementDetailsComponent} from "./screens/requirements/requirement-details/requirement-details.component";
 
 const routes: Routes = [
-  { path: '', component: UserStoriesComponent },
+  { path: '', component: RequirementsComponent },
   { path: 'pages-login', component: PagesLoginComponent },
   { path: 'pages-register', component: PagesRegisterComponent },
   { path: 'user-profile', component: UsersProfileComponent },
@@ -26,11 +37,16 @@ const routes: Routes = [
   { path: 'use-cases', component: UseCasesComponent },
   { path: 'use-case-details', component: UseCaseDetailsComponent },
   { path: 'use-case-diagrams', component: UseCaseDiagramComponent },
+  { path: 'use-case-diagram-canvas', component: UseCaseDiagramCanvasComponent },
   { path: 'glossary', component: GlossaryComponent },
   { path: 'screen-flow-diagrams', component: ScreenFlowDiagramsComponent },
   { path: 'screen-mockups', component: ScreenMockupsComponent },
   { path: 'actor-details', component: ActorDetailsComponent },
   { path: 'glossary-details', component: GlossaryDetailsComponent },
+  { path: 'screen-flow-diagram-details', component: ScreenFlowDiagramDetailsComponent },
+  { path: 'screen-mockup-details', component: ScreenMockupDetailsComponent },
+  { path: 'requirements', component: RequirementsComponent },
+  { path: 'requirement-details', component: RequirementDetailsComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
-import { Component ,ElementRef} from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, ElementRef} from '@angular/core';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +8,29 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'BA Portal';
-  constructor(private elementRef: ElementRef,  public  _router: Router) { }
+
+  commonExceptions: string[] = [
+    '/pages-register',
+    '/pages-login',
+    '/pages-error404',
+    '/use-case-diagram-canvas',
+  ]
+
+  appHeaderExceptions: string[] = [
+    ...this.commonExceptions
+  ]
+
+  appSideBarExceptions: string[] = [
+    ...this.commonExceptions
+  ]
+
+  appFooterExceptions: string[] = [
+    ...this.commonExceptions
+  ]
+
+  constructor(private elementRef: ElementRef, public _router: Router) {
+    console.log('route: ' + _router.url)
+  }
 
   ngOnInit() {
     // var s = document.createElement("script");
