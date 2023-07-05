@@ -39,16 +39,19 @@
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                               <li>
                                 <a class="dropdown-item d-flex align-items-center"
-                                   routerLink="/screen-flow-diagram-details"> <i class="bi bi-chat-right-text"></i>
-                                  <span>Details</span> </a>
+                                   routerLink="/screen-flow-diagram-details">
+                                  <i class="bi bi-chat-right-text"></i>
+                                  <span>Details</span>
+                                </a>
                               </li>
                               <li>
                                 <hr class="dropdown-divider">
                               </li>
                               <li>
-                                <a class="dropdown-item d-flex align-items-center"> <i
-                                  class="bi bi-trash3 text-danger"></i>
-                                  <span class="text-danger">Delete</span> </a>
+                                <a (click)="onDelete()" class="dropdown-item d-flex align-items-center">
+                                  <i class="bi bi-trash text-danger"></i>
+                                  <span class="text-danger">Details</span>
+                                </a>
                               </li>
                             </ul>
                           </li>

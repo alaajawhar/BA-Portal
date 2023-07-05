@@ -1,0 +1,31 @@
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{'todo.add-new-title'}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <label>{{ 'title' }}</label>
+      <input type="text" class="form-control" placeholder="">
+    </div>
+    <div class="mt-4">
+      <label>{{ 'detail' }}</label>
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+    <div class="mt-4">
+      <label>{{ 'category' }}</label>
+      <label class="w-100">
+        <ng-select appearance="outline">
+          <ng-option *ngFor="let item of categories" [value]="item.value">{{item.label}}</ng-option>
+        </ng-select>
+      </label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary"
+            (click)="modalRef.hide()">{{'cancel' }}</button>
+    <button type="submit" class="btn btn-primary float-right">{{ 'create'}}</button>
+  </div>
+</ng-template>
