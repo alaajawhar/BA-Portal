@@ -42,13 +42,12 @@ import {
   UserStoryDetailsItemComponent
 } from './screens/user-stories/user-story-details/user-story-details-item/user-story-details-item.component';
 import {TicketManagementComponent} from './components/ticket-management/ticket-management.component';
-import {AddNewTicketComponent} from './components/ticket-management/add-new-ticket/add-new-ticket.component';
 import {CollapseModule} from "ngx-bootstrap/collapse";
 import {TicketMenuComponent} from './components/ticket-management/ticket-menu/ticket-menu.component';
 import {BsModalService} from "ngx-bootstrap/modal";
 import {ComponentLoaderFactory} from "ngx-bootstrap/component-loader";
 import {PositioningService} from "ngx-bootstrap/positioning";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -80,7 +79,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     RequirementDetailsComponent,
     UserStoryDetailsItemComponent,
     TicketManagementComponent,
-    AddNewTicketComponent,
     TicketMenuComponent,
   ],
   imports: [
@@ -89,7 +87,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     AppRoutingModule,
     GridModule, PagerModule, SymbolPaletteModule, DiagramModule,
     SimpleNotificationsModule.forRoot(), CollapseModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [
     BsModalService,

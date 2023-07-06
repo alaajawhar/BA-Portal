@@ -12,4 +12,7 @@ export class UseCasesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete() {
+    console.log("he")
+  }
 }

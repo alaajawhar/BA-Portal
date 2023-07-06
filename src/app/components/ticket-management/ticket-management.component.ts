@@ -1,89 +1,86 @@
-import {Component, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
-import {ITodo, TodoService} from "./TodoService";
-import {AddNewTicketComponent} from "./add-new-ticket/add-new-ticket.component";
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-ticket-management',
   templateUrl: './ticket-management.component.html',
   styleUrls: ['./ticket-management.component.css']
 })
-export class TicketManagementComponent implements OnInit, OnDestroy {
-  columns = [
-    { prop: 'title', name: 'Title' },
-    { prop: 'sales', name: 'Sales' },
-    { prop: 'stock', name: 'Stock' },
-    { prop: 'category', name: 'Category' },
-    { prop: 'id', name: 'Id' }
-  ];
-  itemsPerPage = 10;
-  itemOptionsPerPage = [5, 10, 20];
-  selected = [];
-  selectAllState = '';
-  itemOrder = 'Title';
-  itemOptionsOrders = ['Title', 'Category', 'Status', 'Label'];
-  displayOptionsCollapsed = true;
+export class TicketManagementComponent implements OnInit{
 
-  todoItems: ITodo[] = [];
+  newTaskTitle: string = undefined!
+  newTaskDesc: string = undefined!
+  newTaskType: string = undefined!
 
-  // @ts-ignore
-  @ViewChild('addNewModalRef', { static: true }) addNewModalRef: AddNewTicketComponent;
+  todoItems: ITodo[] = []
 
-  constructor(private todoService: TodoService, private renderer: Renderer2) { }
-
-  ngOnInit() {
-    this.renderer.addClass(document.body, 'right-menu');
-    this.getItems();
+  constructor() {
   }
 
-  ngOnDestroy() {
-    this.renderer.removeClass(document.body, 'right-menu');
+
+  ngOnInit(): void {
+    this.todoItems = [
+      {
+        "id": 1,
+        "title": "Create PosUser As actor",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "category": "Task",
+        "date": "25.12.2022"
+      },
+      {
+        "id": 2,
+        "title": "Delete customer actor",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "category": "Change Request",
+        "date": "23.12.2022"
+      },
+      {
+        "id": 3,
+        "title": "Cannot change mobile number",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "category": "ISSUE",
+        "date": "22.12.2022"
+      },
+      {
+        "id": 4,
+        "title": "Error message is always showing",
+        "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "category": "BUG",
+        "date": "22.12.2022"
+      }
+    ];
   }
 
-  getItems() {
-    this.todoService.getTodoItems()
-      .subscribe(items => {
-        this.todoItems = items;
-      });
-  }
+  onCreateNewItem(formDetails: NgForm) {
+    console.log(this.todoItems)
 
-  showAddNewModal() {
-    this.addNewModalRef.show();
-  }
+    console.log(formDetails.value.newTaskTitle)
+    console.log(formDetails.value.newTaskDesc)
+    console.log(formDetails.value.newTaskType)
 
-  isSelected(p: ITodo) {
-    // @ts-ignore
-    return this.selected.findIndex(x => x.id === p.id) > -1;
-  }
-  onSelect(item: ITodo) {
-    if (this.isSelected(item)) {
-      // @ts-ignore
-      this.selected = this.selected.filter(x => x.id !== item.id);
-    } else {
-      // @ts-ignore
-      this.selected.push(item);
+    let newItem: any = {
+      "id": 0,
+      "title": formDetails.value.newTaskTitle,
+      "detail": formDetails.value.newTaskDesc,
+      "category": formDetails.value.newTaskType,
+      "date": "22.12.2022"
     }
-    this.setSelectAllState();
+
+    this.todoItems.unshift(newItem)
+
+    console.log(this.todoItems)
   }
 
-  setSelectAllState() {
-    if (this.selected.length === this.todoItems.length) {
-      this.selectAllState = 'checked';
-    } else if (this.selected.length !== 0) {
-      this.selectAllState = 'indeterminate';
-    } else {
-      this.selectAllState = '';
-    }
+  onDelete() {
+    console.log("hjajsd")
   }
 
-  selectAll($event: any) {
-    if ($event.target.checked) {
-      // @ts-ignore
-      this.selected = [...this.todoItems];
-    } else {
-      this.selected = [];
-    }
-    this.setSelectAllState();
-  }
+}
 
-
+export interface ITodo {
+  id: number;
+  title: string;
+  detail: string;
+  category: string;
+  date: string;
 }
