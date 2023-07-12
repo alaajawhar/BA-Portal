@@ -12,4 +12,7 @@ export class GlossaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete() {
+    console.log("on delete")
+  }
 }

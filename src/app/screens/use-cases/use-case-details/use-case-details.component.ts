@@ -7,9 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UseCaseDetailsComponent implements OnInit {
 
-  constructor() { }
+  dropdownList = [
+    { id: 1, itemName: 'Customer' },
+    { id: 2, itemName: 'Merchant' },
+    { id: 3, itemName: 'Sender' },
+    { id: 4, itemName: 'Receiver' },
+    { id: 5, itemName: 'Middleman' },
+  ];
+  selectedItems = [
+    { id: 1, itemName: 'Customer' },
+    { id: 4, itemName: 'Receiver' },
+  ];
+  dropdownSettings = {};
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dropdownSettings = {
+      singleSelection: false,
+      text: 'Select Countries',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      enableSearchFilter: true,
+      classes: ''
+    };
   }
-
+  onItemSelect(item: any) {
+    console.log(item);
+    console.log(this.selectedItems);
+  }
+  OnItemDeSelect(item: any) {
+    console.log(item);
+    console.log(this.selectedItems);
+  }
+  onSelectAll(items: any) {
+    console.log(items);
+  }
+  onDeSelectAll(items: any) {
+    console.log(items);
+  }
 }

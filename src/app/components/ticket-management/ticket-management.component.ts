@@ -72,7 +72,7 @@ export class TicketManagementComponent implements OnInit{
   }
 
   onDelete() {
-    console.log("hjajsd")
+    console.log("on delete has been pressed!")
   }
 
 }

@@ -17,7 +17,6 @@
           <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="flow-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-flow" type="button" role="tab" aria-controls="flow" aria-selected="false">Flow</button></li>
           <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="flow-diagram-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-flow-diagram" type="button" role="tab" aria-controls="flow-diagram" aria-selected="false">Flow Diagram</button></li>
           <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="properties-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-properties" type="button" role="tab" aria-controls="properties" aria-selected="true">Properties</button></li>
-          <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="requirements-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-requirements" type="button" role="tab" aria-controls="requirements" aria-selected="false">Requirements</button></li>
           <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="comments-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-comments" type="button" role="tab" aria-controls="comments" aria-selected="false">Comments</button></li>
           <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="attachments-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-attachments" type="button" role="tab" aria-controls="attachments" aria-selected="false">Attachments</button></li>
           <li class="nav-item flex-fill" role="presentation"> <button class="nav-link w-100" id="items-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-items" type="button" role="tab" aria-controls="items" aria-selected="false">Items</button></li>
@@ -26,7 +25,34 @@
         <div class="tab-content pt-2" id="borderedTabJustifiedContent">
           <div class="tab-pane fade show active" id="bordered-justified-main" role="tabpanel" aria-labelledby="main-tab">
             <app-custom-form class="col" title="Description" subtitle="Goal In Contex"></app-custom-form>
-            <app-custom-form class="col" title="Actors" subtitle="Actors who involved in this story"></app-custom-form>
+            <div class="row">
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title"> Primary Actors</h5>
+                  <p> Main actors in this story</p>
+                  <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event)"
+                                        (onDeSelect)="OnItemDeSelect($event)"
+                                        (onSelectAll)="onSelectAll($event)"
+                                        (onDeSelectAll)="onDeSelectAll($event)">
+                  </angular2-multiselect>
+                </div>
+              </div>
+              <div class="card col">
+                <div class="card-body">
+                  <h5 class="card-title"> Secondary Actors</h5>
+                  <p> Actors who support the main actor in this story</p>
+                  <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event)"
+                                        (onDeSelect)="OnItemDeSelect($event)"
+                                        (onSelectAll)="onSelectAll($event)"
+                                        (onDeSelectAll)="onDeSelectAll($event)">
+                  </angular2-multiselect>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <app-custom-form class="col-sm-12 col-lg-6" title="Pre-condition" subtitle="Pre-condition condition"></app-custom-form>
               <app-custom-form class="col-sm-12 col-lg-6" title="Post-condition" subtitle="Post-condition condition"></app-custom-form>
@@ -34,13 +60,132 @@
           </div>
           <div class="tab-pane fade" id="bordered-justified-flow" role="tabpanel" aria-labelledby="flow-tab"> flow totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.</div>
           <div class="tab-pane fade" id="bordered-justified-flow-diagram" role="tabpanel" aria-labelledby="flow-diagram-tab"> flow-diagram animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.</div>
-          <div class="tab-pane fade show" id="bordered-justified-properties" role="tabpanel" aria-labelledby="properties-tab"> properties est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</div>
-          <div class="tab-pane fade" id="bordered-justified-requirements" role="tabpanel" aria-labelledby="requirements-tab"> requirements totam et. Consequuntur magnam aliquid eos nulla dolor iure eos quia. Accusantium distinctio omnis et atque fugiat. Itaque doloremque aliquid sint quasi quia distinctio similique. Voluptate nihil recusandae mollitia dolores. Ut laboriosam voluptatum dicta.</div>
-          <div class="tab-pane fade" id="bordered-justified-comments" role="tabpanel" aria-labelledby="comments-tab"> comments animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.</div>
+          <div class="tab-pane fade show" id="bordered-justified-properties" role="tabpanel" aria-labelledby="properties-tab">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Properties</h5>
+                <form>
+                  <div class="row mb-3">
+                    <div class="col-lg-6">
+                      <label class="col-form-label">State</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Casual</option>
+                        <option value="2">Completed</option>
+                        <option value="3">Fully Dressed</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="col-form-label">Owner</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Alaa</option>
+                        <option value="2">Saad</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-lg-6">
+                      <label class="col-form-label">Functional Area</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>None</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="col-sm-2 col-form-label">Priority</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option value="Very High">Very High</option>
+                        <option value="High">High</option>
+                        <option value="Normal" selected>Normal</option>
+                        <option value="Low">Low</option>
+                        <option value="Very Low">Very Low</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-lg-6">
+                      <label class="col-form-label">Size</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option value="Very High">Very Large</option>
+                        <option value="High">Large</option>
+                        <option value="Normal" selected>Medium</option>
+                        <option value="Low">Small</option>
+                        <option value="Very Low">Trivial</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="col-sm-2 col-form-label">Complexity</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option value="Very High">Very High</option>
+                        <option value="High">High</option>
+                        <option value="Normal" selected>Medium</option>
+                        <option value="Low">Low</option>
+                        <option value="Very Low">Very Low</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-lg-6">
+                      <label class="col-form-label">Risk</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>None</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="col-form-label">Stability</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>None</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-lg-6">
+                      <label class="col-form-label">User Need</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>None</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="col-form-label">User Priority</label>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>None</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <label class="col-form-label card-title">Assignment</label>
+                      <p>Created By: Alaa Jawhar</p>
+                      <p>Updated At: 2016-05-25</p>
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label card-title">Completion</label>
+                      <p>Completed By: Alaa Jawhar</p>
+                      <p>Completed At: Today</p>
+
+                    </div>
+                  </div>
+                  <div class="row mb-3 me-3 justify-content-end">
+                    <button type="submit" class="col-2 btn btn-primary">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="bordered-justified-comments" role="tabpanel" aria-labelledby="comments-tab">
+            <app-custom-form class="col" title="Comments" subtitle="You can add comment and list comments history as well"></app-custom-form>
+            <p>Previous comments go here...</p>
+          </div>
           <div class="tab-pane fade" id="bordered-justified-attachments" role="tabpanel" aria-labelledby="attachments-tab"> attachments animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.</div>
-          <div class="tab-pane fade" id="bordered-justified-items" role="tabpanel" aria-labelledby="items-tab"> items animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.</div>
+          <div class="tab-pane fade" id="bordered-justified-items" role="tabpanel" aria-labelledby="items-tab">
+            <app-ticket-management></app-ticket-management>
+          </div>
           <div class="tab-pane fade" id="bordered-justified-history" role="tabpanel" aria-labelledby="history-tab"> history animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.</div>
         </div>
       </div>
-    </div>  </section>
+    </div>
+  </section>
 </main>

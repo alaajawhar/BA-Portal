@@ -48,6 +48,8 @@ import {BsModalService} from "ngx-bootstrap/modal";
 import {ComponentLoaderFactory} from "ngx-bootstrap/component-loader";
 import {PositioningService} from "ngx-bootstrap/positioning";
 import {FormsModule} from "@angular/forms";
+import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
+import { FlowDiagramComponent } from './components/flow-diagram/flow-diagram.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,7 @@ import {FormsModule} from "@angular/forms";
     UserStoryDetailsItemComponent,
     TicketManagementComponent,
     TicketMenuComponent,
+    FlowDiagramComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     GridModule, PagerModule, SymbolPaletteModule, DiagramModule,
     SimpleNotificationsModule.forRoot(), CollapseModule,
-    FormsModule
+    FormsModule,
+    AngularMultiSelectModule
   ],
   providers: [
     BsModalService,
