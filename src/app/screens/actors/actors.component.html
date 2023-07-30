@@ -1,102 +1,151 @@
-<main id="main" class="main">
-  <div class="pagetitle">
-    <h1>Actors</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-        <li class="breadcrumb-item active">Actors</li>
-      </ol>
-    </nav>
-  </div>
-  <section class="section">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Actors</h5>
-            <p>Add lightweight datatables to your project.</p>
-            <table class="table datatable">
-              <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Alias</th>
-                <th scope="col">Last Updated Date</th>
-                <!--                <th scope="col">Options</th>-->
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mobile Customer</td>
-                <td>MobCust</td>
-                <td>
-                  <div class="row">
-                    <div class="col">2016-05-25</div>
-                    <div class="col-2">
-                      <nav class="header-nav ms-auto">
-                        <ul class="d-flex align-items-center">
-                          <li class="nav-item dropdown">
-                            <a class="nav-link nav-profile d-flex align-items-center bi bi-three-dots-vertical" href="#" data-bs-toggle="dropdown"></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                              <li>
-                                <a class="dropdown-item d-flex align-items-center" routerLink="/actor-details"> <i class="bi bi-chat-right-text"></i>
-                                <span>Details</span> </a>
-                              </li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li>
-                                <a class="dropdown-item d-flex align-items-center"> <i
-                                  class="bi bi-trash3 text-danger"></i>
-                                  <span class="text-danger">Delete</span> </a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Merchant</td>
-                <td>merchant</td>
-                <td>
-                  <div class="row">
-                    <div class="col">2020-11-02</div>
-                    <div class="col-2">
-                      <nav class="header-nav ms-auto">
-                        <ul class="d-flex align-items-center">
-                          <li class="nav-item dropdown">
-                            <a class="nav-link nav-profile d-flex align-items-center bi bi-three-dots-vertical" href="#" data-bs-toggle="dropdown"></a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                              <li>
-                                <a class="dropdown-item d-flex align-items-center" routerLink="/actor-details"> <i class="bi bi-chat-right-text"></i>
-                                  <span>Details</span> </a>
-                              </li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li>
-                                <a class="dropdown-item d-flex align-items-center"> <i
-                                  class="bi bi-trash3 text-danger"></i>
-                                  <span class="text-danger">Delete</span> </a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+<!--<main id="main" class="main">-->
+<!--  <div class="pagetitle">-->
+<!--    <h1>Actors</h1>-->
+<!--    <nav>-->
+<!--      <ol class="breadcrumb">-->
+<!--        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>-->
+<!--        <li class="breadcrumb-item active">Actors</li>-->
+<!--      </ol>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--  <section class="section">-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-12">-->
+<!--        <div class="card">-->
+<!--          <div class="row card-body">-->
+<!--            <div class="col-4">-->
+<!--              <h5 class="card-title">Actors</h5>-->
+<!--              <p>Add lightweight datatables to your project.</p>-->
+<!--            </div>-->
+<!--            <div class="col-8">-->
+<!--              <div class="top-right-button-container m-3">-->
+<!--                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#largeModal"> Add </button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <table class="table datatable">-->
+<!--              <thead>-->
+<!--              <tr>-->
+<!--                <th scope="col">#</th>-->
+<!--                <th scope="col">Name</th>-->
+<!--                <th scope="col">Alias</th>-->
+<!--                <th scope="col">Last Updated Date</th>-->
+<!--                &lt;!&ndash;                <th scope="col">Options</th>&ndash;&gt;-->
+<!--              </tr>-->
+<!--              </thead>-->
+<!--              <tbody>-->
+<!--              <tr>-->
+<!--                <th scope="row">1</th>-->
+<!--                <td>Mobile Customer</td>-->
+<!--                <td>MobCust</td>-->
+<!--                <td>-->
+<!--                  <div class="row">-->
+<!--                    <div class="col">2016-05-25</div>-->
+<!--                    <div class="col-2">-->
+<!--                      <nav class="header-nav ms-auto">-->
+<!--                        <ul class="d-flex align-items-center">-->
+<!--                          <li class="nav-item dropdown">-->
+<!--                            <a class="nav-link nav-profile d-flex align-items-center bi bi-three-dots-vertical" href="#"-->
+<!--                               data-bs-toggle="dropdown"></a>-->
+<!--                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">-->
+<!--                              <li>-->
+<!--                                <a class="dropdown-item d-flex align-items-center" routerLink="/actor-details"> <i-->
+<!--                                  class="bi bi-chat-right-text"></i>-->
+<!--                                  <span>Details</span> </a>-->
+<!--                              </li>-->
+<!--                              <li>-->
+<!--                                <hr class="dropdown-divider">-->
+<!--                              </li>-->
+<!--                              <li>-->
+<!--                                <a class="dropdown-item d-flex align-items-center"> <i-->
+<!--                                  class="bi bi-trash3 text-danger"></i>-->
+<!--                                  <span class="text-danger">Delete</span> </a>-->
+<!--                              </li>-->
+<!--                            </ul>-->
+<!--                          </li>-->
+<!--                        </ul>-->
+<!--                      </nav>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <th scope="row">2</th>-->
+<!--                <td>Merchant</td>-->
+<!--                <td>merchant</td>-->
+<!--                <td>-->
+<!--                  <div class="row">-->
+<!--                    <div class="col">2020-11-02</div>-->
+<!--                    <div class="col-2">-->
+<!--                      <nav class="header-nav ms-auto">-->
+<!--                        <ul class="d-flex align-items-center">-->
+<!--                          <li class="nav-item dropdown">-->
+<!--                            <a class="nav-link nav-profile d-flex align-items-center bi bi-three-dots-vertical" href="#"-->
+<!--                               data-bs-toggle="dropdown"></a>-->
+<!--                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">-->
+<!--                              <li>-->
+<!--                                <a class="dropdown-item d-flex align-items-center" routerLink="/actor-details"> <i-->
+<!--                                  class="bi bi-chat-right-text"></i>-->
+<!--                                  <span>Details</span> </a>-->
+<!--                              </li>-->
+<!--                              <li>-->
+<!--                                <hr class="dropdown-divider">-->
+<!--                              </li>-->
+<!--                              <li>-->
+<!--                                <a class="dropdown-item d-flex align-items-center"> <i-->
+<!--                                  class="bi bi-trash3 text-danger"></i>-->
+<!--                                  <span class="text-danger">Delete</span> </a>-->
+<!--                              </li>-->
+<!--                            </ul>-->
+<!--                          </li>-->
+<!--                        </ul>-->
+<!--                      </nav>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </td>-->
+<!--              </tr>-->
+<!--              </tbody>-->
+<!--            </table>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--</main>-->
+
+<app-base-screen [content]="thisScreen"></app-base-screen>
+<ng-template #thisScreen>
+  <app-table [tableHeaders]="columnHeaders" [tableRecords]="columnData" [title]="title" [mainActionButtons]="mainActionButton"
+             [description]="desc"></app-table>
+</ng-template>
+
+
+<!--<div class="modal fade" id="largeModal" tabindex="-1">-->
+<!--  <div class="modal-dialog modal-lg">-->
+<!--    <div class="modal-content rounded-3">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title">New Actors</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <form ngNativeValidate #myForm="ngForm" (ngSubmit)="onCreateNewItem(myForm)">-->
+<!--          <div class="row mb-3">-->
+<!--            <label for="newUserStoryItemName" class="col-sm-2 col-form-label">Name</label>-->
+<!--            <div class="col-sm-10">-->
+<!--              <input id="newUserStoryItemName" [(ngModel)]="newUserStoryItem.name" name="name" type="text" class="form-control">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row mb-3">-->
+<!--            <label for="newUserStoryItemAlias" class="col-sm-2 col-form-label">Alias</label>-->
+<!--            <div class="col-sm-10">-->
+<!--              <input id="newUserStoryItemAlias" [(ngModel)]="newUserStoryItem.alias" name="name" type="text" class="form-control">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="modal-footer">-->
+<!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Create</button>-->
+<!--          </div>-->
+<!--        </form>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

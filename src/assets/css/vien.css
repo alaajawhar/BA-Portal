@@ -897,6 +897,13 @@ button {
   float: right;
   position: relative;
 }
+
+
+
+.top-left-button-container {
+  float: left;
+  position: relative;
+}
 .top-right-button-container .check-button .custom-control-label::before {
   border: 1px solid #fff !important;
 }

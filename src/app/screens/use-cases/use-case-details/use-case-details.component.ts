@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {QueryBuilderClassNames, QueryBuilderConfig} from "angular2-query-builder";
+import {LogicalStepEnum} from "../flow-diagram-details/logic-condition/logic-condition-data";
 
 @Component({
   selector: 'app-use-case-details',
@@ -7,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UseCaseDetailsComponent implements OnInit {
 
+  stepTest: LogicalStepEnum = LogicalStepEnum.IF
+
+  flowList: [{}] = [
+    {
+
+    }
+  ];
+
   dropdownList = [
     { id: 1, itemName: 'Customer' },
     { id: 2, itemName: 'Merchant' },
@@ -14,7 +24,11 @@ export class UseCaseDetailsComponent implements OnInit {
     { id: 4, itemName: 'Receiver' },
     { id: 5, itemName: 'Middleman' },
   ];
-  selectedItems = [
+  primarySelectedItems = [
+    { id: 1, itemName: 'Customer' },
+    { id: 4, itemName: 'Receiver' },
+  ];
+  secondarySelectedItems = [
     { id: 1, itemName: 'Customer' },
     { id: 4, itemName: 'Receiver' },
   ];
@@ -32,16 +46,21 @@ export class UseCaseDetailsComponent implements OnInit {
   }
   onItemSelect(item: any) {
     console.log(item);
-    console.log(this.selectedItems);
+    console.log(this.primarySelectedItems);
   }
   OnItemDeSelect(item: any) {
     console.log(item);
-    console.log(this.selectedItems);
+    console.log(this.primarySelectedItems);
   }
   onSelectAll(items: any) {
     console.log(items);
   }
   onDeSelectAll(items: any) {
     console.log(items);
+  }
+
+  onAddFlow() {
+    this.flowList.push({
+    })
   }
 }

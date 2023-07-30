@@ -1,9 +1,9 @@
 import { Component, ElementRef, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-custom-form',
-  templateUrl: './custom-form.component.html',
-  styleUrls: ['./custom-form.component.css']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
 })
 export class CustomFormComponent implements OnInit {
 

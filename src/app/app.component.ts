@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'BA Portal';
+  title = 'Test Portal';
 
   commonExceptions: string[] = [
     '/pages-register',

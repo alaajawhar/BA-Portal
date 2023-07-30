@@ -22,7 +22,7 @@ import {ActorDetailsComponent} from './screens/actors/actor-details/actor-detail
 import {GlossaryDetailsComponent} from './screens/glossary/glossary-details/glossary-details.component';
 import {UserStoryDetailsComponent} from './screens/user-stories/user-story-details/user-story-details.component';
 import {UseCaseDetailsComponent} from './screens/use-cases/use-case-details/use-case-details.component';
-import {CustomFormComponent} from './components/custom-form/custom-form.component';
+import {CustomFormComponent} from './shared/form/form.component';
 import {GridModule, PagerModule} from '@syncfusion/ej2-angular-grids';
 import {DiagramModule, SymbolPaletteModule} from "@syncfusion/ej2-angular-diagrams";
 import {
@@ -50,6 +50,13 @@ import {PositioningService} from "ngx-bootstrap/positioning";
 import {FormsModule} from "@angular/forms";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
 import { FlowDiagramComponent } from './components/flow-diagram/flow-diagram.component';
+import {QueryBuilderModule} from "angular2-query-builder";
+import { FlowDiagramDetailsComponent } from './screens/use-cases/flow-diagram-details/flow-diagram-details.component';
+import { LogicConditionComponent } from './screens/use-cases/flow-diagram-details/logic-condition/logic-condition.component';
+import { UseCaseRequirementsComponent } from './screens/use-cases/use-case-requirements/use-case-requirements.component';
+import { TableComponent } from './shared/table/table.component';
+import { BaseScreenComponent } from './shared/base-screen/base-screen.component';
+import { DangerDialogComponent } from './shared/danger-dialog/danger-dialog.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +90,13 @@ import { FlowDiagramComponent } from './components/flow-diagram/flow-diagram.com
     TicketManagementComponent,
     TicketMenuComponent,
     FlowDiagramComponent,
+    FlowDiagramDetailsComponent,
+    LogicConditionComponent,
+    LogicConditionComponent,
+    UseCaseRequirementsComponent,
+    TableComponent,
+    BaseScreenComponent,
+    DangerDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +105,7 @@ import { FlowDiagramComponent } from './components/flow-diagram/flow-diagram.com
     GridModule, PagerModule, SymbolPaletteModule, DiagramModule,
     SimpleNotificationsModule.forRoot(), CollapseModule,
     FormsModule,
-    AngularMultiSelectModule
+    AngularMultiSelectModule,
   ],
   providers: [
     BsModalService,

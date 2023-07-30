@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  selectedTab: string = ""
+
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  activeClass(routingTab: string) {
+    return this.route.url.indexOf(routingTab) >= 0 ?  '' : 'collapsed';
   }
 
 }

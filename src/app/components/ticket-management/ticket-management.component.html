@@ -10,8 +10,8 @@
         <div class="card-body">
           <div class="row">
             <div class="col-4">
-              <h5 class="card-title">Screen Flow Diagram</h5>
-              <p>Add, edit and delete story items</p>
+              <h5 class="card-title">Task Item List</h5>
+              <p>Add, edit and delete items</p>
             </div>
             <div class="col-8">
               <div class="top-right-button-container m-3">
@@ -54,10 +54,10 @@
                               <hr class="dropdown-divider">
                             </li>
                             <li>
-                              <a (click)="onDelete()" class="dropdown-item d-flex align-items-center">
+                              <div (click)="onDelete()" class="dropdown-item d-flex align-items-center">
                                 <i class="bi bi-trash text-danger"></i>
                                 <span class="text-danger">Details</span>
-                              </a>
+                              </div>
                             </li>
                           </ul>
                         </li>
