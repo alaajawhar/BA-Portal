@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 export class ScreenMockupsComponent implements OnInit {
   title: string = "Screen Mockups"
   desc: string = "Add, edit and delete your screen mockups"
-  columnHeaders: string[] = ['Name', 'Type', 'Date']
+  columnHeaders: string[] = ['#', 'Name', 'Date']
   columnData: TableRow[] = [
     {
       values: ['1', 'Screen Mockups Example 1', '2023-05-26'],

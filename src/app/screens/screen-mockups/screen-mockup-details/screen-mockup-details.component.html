@@ -1,4 +1,9 @@
 <app-base-screen [content]="thisScreen"></app-base-screen>
 <ng-template #thisScreen>
-  <p>under development </p>
+  <div>
+    <app-logical-flow [item]="parentItem"
+                      [connectedDropListsIds]="connectedDropListsIds"
+                      (itemDrop)="onDragDrop($event)">
+    </app-logical-flow>
+  </div>
 </ng-template>

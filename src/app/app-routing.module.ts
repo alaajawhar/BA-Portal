@@ -25,6 +25,7 @@ import {
 } from "./screens/screen-mockups/screen-mockup-details/screen-mockup-details.component";
 import {RequirementsComponent} from "./screens/requirements/requirements.component";
 import {RequirementDetailsComponent} from "./screens/requirements/requirement-details/requirement-details.component";
+import {PagesError404Component} from "./screens/pages-error404/pages-error404.component";
 
 const routes: Routes = [
   { path: '', component: RequirementsComponent },
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'screen-mockup-details', component: ScreenMockupDetailsComponent },
   { path: 'requirements', component: RequirementsComponent },
   { path: 'requirement-details', component: RequirementDetailsComponent },
+  { path: 'error404', component: PagesError404Component },
 ];
 
 @NgModule({

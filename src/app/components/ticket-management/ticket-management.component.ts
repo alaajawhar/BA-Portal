@@ -6,6 +6,7 @@ import {NgForm} from "@angular/forms";
   templateUrl: './ticket-management.component.html',
   styleUrls: ['./ticket-management.component.css']
 })
+// DEPRECATED
 export class TicketManagementComponent implements OnInit{
 
   newTaskTitle: string = undefined!

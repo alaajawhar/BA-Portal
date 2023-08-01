@@ -3,6 +3,8 @@ import {NgForm} from "@angular/forms";
 import {ButtonAction, TableRow} from "../../shared/table/table.models";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
+import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
+import {BsModalRef, BsModalService} from "ngx-bootstrap/modal";
 
 @Component({
   selector: 'app-requirements',
@@ -32,17 +34,17 @@ export class RequirementsComponent implements OnInit {
       }]
     }]
 
-  mainActionButton: ButtonAction[] = [
-    {
+  mainActionButton: ButtonAction[] = [{
       name: 'Add',
       bootstrapIcon: 'bi bi-trash-fill',
       classes: 'btn-primary',
       style: '',
-      onClick: () => console.log('onAdd')
+      onClick: () => this.confirm()
     }
   ];
 
-  constructor(private router: Router, private notifications: NotificationsService) {
+
+  constructor(private router: Router, private notifications: NotificationsService, private modalService: BsModalService) {
   }
 
   ngOnInit(): void {
@@ -52,6 +54,16 @@ export class RequirementsComponent implements OnInit {
   }
 
   onDelete(index: number) {
+    this.openModal();
+  }
+
+  modalRef: BsModalRef;
+  openModal() {
+    this.modalRef = this.modalService.show(DangerDialogComponent);
+    return this.modalRef;
+  }
+
+  confirm(): void {
     this.notifications.success(
       "Deleted",
       "Requirement 1 has been deleted successfully"
@@ -61,5 +73,10 @@ export class RequirementsComponent implements OnInit {
         showProgressBar: false
       }
     );
+    this.modalRef.hide();
+  }
+
+  decline(): void {
+    this.modalRef.hide();
   }
 }

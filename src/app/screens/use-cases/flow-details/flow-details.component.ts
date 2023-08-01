@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Item} from "../../../shared/components/logical-flow/item";
 import {CdkDragDrop, CdkDragEnter, CdkDragExit, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
-  selector: 'app-screen-mockup-details',
-  templateUrl: './screen-mockup-details.component.html',
-  styleUrls: ['./screen-mockup-details.component.css']
+  selector: 'app-flow-details',
+  templateUrl: './flow-details.component.html',
+  styleUrls: ['./flow-details.component.css']
 })
-export class ScreenMockupDetailsComponent implements OnInit {
+export class FlowDetailsComponent implements OnInit {
   public parentItem: Item;
   public get connectedDropListsIds(): string[] {
     // We reverse ids here to respect items nesting hierarchy

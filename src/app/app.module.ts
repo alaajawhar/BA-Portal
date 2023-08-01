@@ -49,14 +49,23 @@ import {ComponentLoaderFactory} from "ngx-bootstrap/component-loader";
 import {PositioningService} from "ngx-bootstrap/positioning";
 import {FormsModule} from "@angular/forms";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
-import { FlowDiagramComponent } from './components/flow-diagram/flow-diagram.component';
-import {QueryBuilderModule} from "angular2-query-builder";
-import { FlowDiagramDetailsComponent } from './screens/use-cases/flow-diagram-details/flow-diagram-details.component';
-import { LogicConditionComponent } from './screens/use-cases/flow-diagram-details/logic-condition/logic-condition.component';
-import { UseCaseRequirementsComponent } from './screens/use-cases/use-case-requirements/use-case-requirements.component';
-import { TableComponent } from './shared/table/table.component';
-import { BaseScreenComponent } from './shared/base-screen/base-screen.component';
-import { DangerDialogComponent } from './shared/danger-dialog/danger-dialog.component';
+import {FlowDiagramComponent} from './components/flow-diagram/flow-diagram.component';
+import {FlowDiagramDetailsComponent} from './screens/use-cases/flow-diagram-details/flow-diagram-details.component';
+import {
+  LogicConditionComponent
+} from './screens/use-cases/flow-diagram-details/logic-condition/logic-condition.component';
+import {UseCaseRequirementsComponent} from './screens/use-cases/use-case-requirements/use-case-requirements.component';
+import {TableComponent} from './shared/table/table.component';
+import {BaseScreenComponent} from './shared/base-screen/base-screen.component';
+import {DangerDialogComponent} from './shared/danger-dialog/danger-dialog.component';
+import {NavTabComponent} from './shared/nav-tab/nav-tab.component';
+import {Tab1Component} from './screens/screen-mockups/tab1/tab1.component';
+import {LogicalFlowComponent} from './shared/components/logical-flow/logical-flow.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {OverlayModule} from "@angular/cdk/overlay";
+import {QuillModule} from "ngx-quill";
+import { FlowDetailsComponent } from './screens/use-cases/flow-details/flow-details.component';
+import { ItemsDetailsComponent } from './screens/use-cases/items-details/items-details.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +105,12 @@ import { DangerDialogComponent } from './shared/danger-dialog/danger-dialog.comp
     UseCaseRequirementsComponent,
     TableComponent,
     BaseScreenComponent,
-    DangerDialogComponent
+    DangerDialogComponent,
+    NavTabComponent,
+    Tab1Component,
+    LogicalFlowComponent,
+    FlowDetailsComponent,
+    ItemsDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +120,8 @@ import { DangerDialogComponent } from './shared/danger-dialog/danger-dialog.comp
     SimpleNotificationsModule.forRoot(), CollapseModule,
     FormsModule,
     AngularMultiSelectModule,
+    DragDropModule,
+    OverlayModule, QuillModule.forRoot(),
   ],
   providers: [
     BsModalService,
@@ -113,6 +129,7 @@ import { DangerDialogComponent } from './shared/danger-dialog/danger-dialog.comp
     PositioningService,
   ],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+}

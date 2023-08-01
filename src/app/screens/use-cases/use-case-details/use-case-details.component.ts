@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {QueryBuilderClassNames, QueryBuilderConfig} from "angular2-query-builder";
+import {Component, OnInit} from '@angular/core';
 import {LogicalStepEnum} from "../flow-diagram-details/logic-condition/logic-condition-data";
 
 @Component({
