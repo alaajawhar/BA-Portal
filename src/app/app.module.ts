@@ -49,7 +49,7 @@ import {ComponentLoaderFactory} from "ngx-bootstrap/component-loader";
 import {PositioningService} from "ngx-bootstrap/positioning";
 import {FormsModule} from "@angular/forms";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
-import {FlowDiagramComponent} from './components/flow-diagram/flow-diagram.component';
+import {FlowDiagramComponent} from './shared/components/flow-diagram/flow-diagram.component';
 import {FlowDiagramDetailsComponent} from './screens/use-cases/flow-diagram-details/flow-diagram-details.component';
 import {
   LogicConditionComponent
