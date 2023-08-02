@@ -38,9 +38,7 @@ import {RequirementsComponent} from './screens/requirements/requirements.compone
 import {RequirementDetailsComponent} from './screens/requirements/requirement-details/requirement-details.component';
 import {SimpleNotificationsModule} from "angular2-notifications";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {TicketManagementComponent} from './components/ticket-management/ticket-management.component';
 import {CollapseModule} from "ngx-bootstrap/collapse";
-import {TicketMenuComponent} from './components/ticket-management/ticket-menu/ticket-menu.component';
 import {BsModalService} from "ngx-bootstrap/modal";
 import {ComponentLoaderFactory} from "ngx-bootstrap/component-loader";
 import {PositioningService} from "ngx-bootstrap/positioning";
@@ -62,17 +60,21 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
 import {QuillModule} from "ngx-quill";
 import {FlowDetailsComponent} from './screens/use-cases/flow-details/flow-details.component';
 import {ItemsDetailsComponent} from './screens/use-cases/items-details/items-details.component';
-import { UsItemDetailsComponent } from './screens/user-stories/us-item-details/us-item-details.component';
-import { UsStoryDetailsComponent } from './screens/user-stories/us-story-details/us-story-details.component';
-import { UsDescriptionDetailsComponent } from './screens/user-stories/us-description-details/us-description-details.component';
-import { UsCommentsDetailsComponent } from './screens/user-stories/us-comments-details/us-comments-details.component';
-import { UsAttachementsDetailsComponent } from './screens/user-stories/us-attachements-details/us-attachements-details.component';
-import { UsOverviewDetailsComponent } from './screens/user-stories/us-overview-details/us-overview-details.component';
-import { UsHistoryDetailsComponent } from './screens/user-stories/us-history-details/us-history-details.component';
-import { ADescriptionComponent } from './screens/actors/a-description/a-description.component';
-import { AGoalsComponent } from './screens/actors/a-goals/a-goals.component';
-import { AHistoryComponent } from './screens/actors/a-history/a-history.component';
-import { AOverviewComponent } from './screens/actors/a-overview/a-overview.component';
+import {UsItemDetailsComponent} from './screens/user-stories/us-item-details/us-item-details.component';
+import {UsStoryDetailsComponent} from './screens/user-stories/us-story-details/us-story-details.component';
+import {
+  UsDescriptionDetailsComponent
+} from './screens/user-stories/us-description-details/us-description-details.component';
+import {UsCommentsDetailsComponent} from './screens/user-stories/us-comments-details/us-comments-details.component';
+import {
+  UsAttachementsDetailsComponent
+} from './screens/user-stories/us-attachements-details/us-attachements-details.component';
+import {UsOverviewDetailsComponent} from './screens/user-stories/us-overview-details/us-overview-details.component';
+import {UsHistoryDetailsComponent} from './screens/user-stories/us-history-details/us-history-details.component';
+import {ADescriptionComponent} from './screens/actors/a-description/a-description.component';
+import {AGoalsComponent} from './screens/actors/a-goals/a-goals.component';
+import {AHistoryComponent} from './screens/actors/a-history/a-history.component';
+import {AOverviewComponent} from './screens/actors/a-overview/a-overview.component';
 
 @NgModule({
   declarations: [
@@ -102,8 +104,6 @@ import { AOverviewComponent } from './screens/actors/a-overview/a-overview.compo
     ScreenMockupDetailsComponent,
     RequirementsComponent,
     RequirementDetailsComponent,
-    TicketManagementComponent,
-    TicketMenuComponent,
     FlowDiagramComponent,
     FlowDiagramDetailsComponent,
     LogicConditionComponent,
