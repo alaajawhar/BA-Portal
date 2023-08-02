@@ -23,90 +23,25 @@
         </ul>
         <div class="tab-content pt-2" id="borderedTabJustifiedContent">
           <div class="tab-pane fade show active mt-3" id="bordered-justified-story" role="tabpanel" aria-labelledby="story-tab">
-            <app-form class="col" title="As a" subtitle="User responsible for this story"></app-form>
-            <div class="row">
-              <app-form class="col-sm-12 col-lg-6" title="I want to" subtitle="What I want to achieve by end of this story"></app-form>
-              <app-form class="col-sm-12 col-lg-6" title="So that" subtitle="What is expected to happen when the above triggered"></app-form>
-            </div>
+            <app-us-story-details></app-us-story-details>
           </div>
           <div class="tab-pane fade mt-3" id="bordered-justified-desc" role="tabpanel" aria-labelledby="desc-tab">
-            <app-form class="col" title="Description" subtitle="Small description about this user"></app-form>
+            <app-us-description-details></app-us-description-details>
           </div>
           <div class="tab-pane fade show mt-3" id="bordered-justified-comments" role="tabpanel" aria-labelledby="comments-tab">
-            <app-form class="col" title="Comments" subtitle="You can add comment and list comments history as well"></app-form>
-            <p>Previous comments go here...</p>
+            <app-us-comments-details></app-us-comments-details>
           </div>
           <div class="tab-pane fade" id="bordered-justified-attachments" role="tabpanel" aria-labelledby="attachments-tab">
-            <p>Under Development</p>
+            <app-us-attachements-details></app-us-attachements-details>
           </div>
           <div class="tab-pane fade" id="bordered-justified-items" role="tabpanel" aria-labelledby="items-tab">
-            <app-ticket-management></app-ticket-management>
+            <app-us-item-details></app-us-item-details>
           </div>
           <div class="tab-pane fade" id="bordered-justified-overview" role="tabpanel" aria-labelledby="overview-tab">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Properties</h5>
-                <form>
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">State</label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Draft</option>
-                          <option value="2">Completed</option>
-                          <option value="3">Rejected</option>
-                          <option value="3">Verified</option>
-                        </select>
-                    </div>
-                    <div class="col-lg-6">
-                        <label class="col-form-label">Owner</label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>Alaa</option>
-                            <option value="2">Saad</option>
-                          </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">Functional Area</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>None</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="col-sm-2 col-form-label">Priority</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option value="Very High">Very High</option>
-                        <option value="High">High</option>
-                        <option value="Normal" selected>Normal</option>
-                        <option value="Low">Low</option>
-                        <option value="Very Low">Very Low</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col">
-                      <label class="col-form-label card-title">Assignment</label>
-                      <p>Created By: Alaa Jawhar</p>
-                      <p>Updated At: 2016-05-25</p>
-                    </div>
-                    <div class="col">
-                      <label class="col-form-label card-title">Completion</label>
-                      <p>Completed By: Alaa Jawhar</p>
-                      <p>Completed At: Today</p>
-
-                    </div>
-                  </div>
-                  <div class="row mb-3 me-3 justify-content-end">
-                      <button type="submit" class="col-2 btn btn-primary">Save</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <app-us-overview-details></app-us-overview-details>
           </div>
           <div class="tab-pane fade" id="bordered-justified-history" role="tabpanel" aria-labelledby="history-tab">
-            Under Development
+            <app-us-history-details></app-us-history-details>
           </div>
         </div>
       </div>
