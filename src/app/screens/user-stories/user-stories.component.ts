@@ -3,6 +3,8 @@ import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
 import {ButtonAction, TableRow} from "../../shared/table/table.models";
+import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
+import {BsModalService} from "ngx-bootstrap/modal";
 
 @Component({
   selector: 'app-user-stories',
@@ -42,22 +44,32 @@ export class UserStoriesComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private notifications: NotificationsService) {
+  constructor(private router: Router, private notifications: NotificationsService, private modalService: BsModalService) {
   }
 
   ngOnInit(): void {
   }
 
   onDelete(index: number) {
-    this.notifications.success(
-      "Deleted",
-      "Requirement 1 has been deleted successfully"
-      , {
-        theClass: 'success',
-        timeOut: 2000,
-        showProgressBar: false
+    let modalRef = this.modalService.show(DangerDialogComponent, {
+      animated: false,
+    });
+
+    modalRef.content.isConfirmed.subscribe((isConfirmed: boolean) => {
+      if (!isConfirmed) {
+        return;
       }
-    );
+
+      this.notifications.success(
+        "Deleted",
+        "Requirement 1 has been deleted successfully"
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
   }
   onCreateNewItem(myForm: NgForm) {
 

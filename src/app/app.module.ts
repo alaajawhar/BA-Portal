@@ -10,7 +10,7 @@ import {UsersProfileComponent} from './screens/users-profile/users-profile.compo
 import {PagesContactComponent} from './screens/pages-contact/pages-contact.component';
 import {PagesRegisterComponent} from './screens/pages-register/pages-register.component';
 import {PagesLoginComponent} from './screens/pages-login/pages-login.component';
-import {PagesError404Component} from './screens/pages-error404/pages-error404.component';
+import {PagesError404Component} from './shared/pages-error404/pages-error404.component';
 import {UserStoriesComponent} from './screens/user-stories/user-stories.component';
 import {ActorsComponent} from './screens/actors/actors.component';
 import {UseCaseDiagramComponent} from './screens/use-case-diagram/use-case-diagram.component';
@@ -62,10 +62,9 @@ import {NavTabComponent} from './shared/nav-tab/nav-tab.component';
 import {Tab1Component} from './screens/screen-mockups/tab1/tab1.component';
 import {LogicalFlowComponent} from './shared/components/logical-flow/logical-flow.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-import {OverlayModule} from "@angular/cdk/overlay";
 import {QuillModule} from "ngx-quill";
-import { FlowDetailsComponent } from './screens/use-cases/flow-details/flow-details.component';
-import { ItemsDetailsComponent } from './screens/use-cases/items-details/items-details.component';
+import {FlowDetailsComponent} from './screens/use-cases/flow-details/flow-details.component';
+import {ItemsDetailsComponent} from './screens/use-cases/items-details/items-details.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +120,7 @@ import { ItemsDetailsComponent } from './screens/use-cases/items-details/items-d
     FormsModule,
     AngularMultiSelectModule,
     DragDropModule,
-    OverlayModule, QuillModule.forRoot(),
+    QuillModule.forRoot(),
   ],
   providers: [
     BsModalService,

@@ -10,8 +10,8 @@
       <p>{{ description }}</p>
     </div>
     <div class="row modal-footer">
-      <button type="button" class="col btn btn-info" data-dismiss="modal"> {{ secondaryButtonText}}</button>
-      <button type="button" class="col btn btn-danger">{{ dangerButtonText }}</button>
+      <button type="button" class="col btn btn-info" (click)="onCancel()"> Cancel </button>
+      <button type="button" class="col btn btn-danger" (click)="onConfirm()"> Confirm </button>
     </div>
   </div>
 </div>

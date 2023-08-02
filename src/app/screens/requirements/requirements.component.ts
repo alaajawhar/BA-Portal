@@ -35,13 +35,12 @@ export class RequirementsComponent implements OnInit {
     }]
 
   mainActionButton: ButtonAction[] = [{
-      name: 'Add',
-      bootstrapIcon: 'bi bi-trash-fill',
-      classes: 'btn-primary',
-      style: '',
-      onClick: () => this.confirm()
-    }
-  ];
+    name: 'Add',
+    bootstrapIcon: 'bi bi-trash-fill',
+    classes: 'btn-primary',
+    style: '',
+    onClick: () => this.onAddNew()
+  }];
 
 
   constructor(private router: Router, private notifications: NotificationsService, private modalService: BsModalService) {
@@ -54,29 +53,29 @@ export class RequirementsComponent implements OnInit {
   }
 
   onDelete(index: number) {
-    this.openModal();
-  }
+    let modalRef = this.modalService.show(DangerDialogComponent, {
+      animated: false,
+    });
 
-  modalRef: BsModalRef;
-  openModal() {
-    this.modalRef = this.modalService.show(DangerDialogComponent);
-    return this.modalRef;
-  }
-
-  confirm(): void {
-    this.notifications.success(
-      "Deleted",
-      "Requirement 1 has been deleted successfully"
-      , {
-        theClass: 'success',
-        timeOut: 2000,
-        showProgressBar: false
+    modalRef.content.isConfirmed.subscribe((isConfirmed: boolean) => {
+      if (!isConfirmed) {
+        return;
       }
-    );
-    this.modalRef.hide();
+
+      this.notifications.success(
+        "Deleted",
+        "Requirement 1 has been deleted successfully"
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
   }
 
-  decline(): void {
-    this.modalRef.hide();
+  onAddNew() {
+    console.log("under dev")
   }
+
 }

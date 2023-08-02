@@ -3,6 +3,8 @@ import {NotificationsService} from "angular2-notifications";
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ButtonAction, TableRow} from "../../shared/table/table.models";
+import {BsModalService} from "ngx-bootstrap/modal";
+import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
 
 @Component({
   selector: 'app-screen-flow-diagrams',
@@ -43,23 +45,35 @@ export class ScreenFlowDiagramsComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private notifications: NotificationsService) {
+  constructor(private router: Router, private notifications: NotificationsService, private modalService: BsModalService) {
   }
 
   ngOnInit(): void {
   }
 
   onDelete(index: number) {
-    this.notifications.success(
-      "Deleted",
-      "Requirement 1 has been deleted successfully"
-      , {
-        theClass: 'success',
-        timeOut: 2000,
-        showProgressBar: false
+    let modalRef = this.modalService.show(DangerDialogComponent, {
+      animated: false,
+    });
+
+    modalRef.content.isConfirmed.subscribe((isConfirmed: boolean) => {
+      if (!isConfirmed) {
+        return;
       }
-    );
+
+      this.notifications.success(
+        "Deleted",
+        "Requirement 1 has been deleted successfully"
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
   }
+
+
 
   onCreateNewItem(myForm: NgForm) {
 
