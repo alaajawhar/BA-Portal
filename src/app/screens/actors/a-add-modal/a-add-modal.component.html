@@ -1,0 +1,27 @@
+<div class="modal-dialog modal-lg">
+  <div class="modal-content rounded-3">
+    <div class="modal-header">
+      <h5 class="modal-title">New Actors</h5>
+    </div>
+    <div class="modal-body">
+      <form ngNativeValidate #myForm="ngForm" (ngSubmit)="onCreateNewItem(myForm)">
+        <div class="row mb-3">
+          <label for="newUserStoryItemName" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input id="newUserStoryItemName" [(ngModel)]="newItem.name" name="name" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="newUserStoryItemAlias" class="col-sm-2 col-form-label">Alias</label>
+          <div class="col-sm-10">
+            <input id="newUserStoryItemAlias" [(ngModel)]="newItem.alias" name="name" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
-import {ButtonAction, TableRow} from "../../shared/table/table.models";
-import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
+import {ButtonAction, TableRow} from "../../shared/components/table/table.models";
+import {DangerDialogComponent} from "../../shared/components/danger-dialog/danger-dialog.component";
 import {BsModalService} from "ngx-bootstrap/modal";
+import {UsAddModalComponent} from "./us-add-modal/us-add-modal.component";
 
 @Component({
   selector: 'app-user-stories',
@@ -40,7 +40,7 @@ export class UserStoriesComponent implements OnInit {
       bootstrapIcon: 'bi bi-trash-fill',
       classes: 'btn-primary',
       style: '',
-      onClick: () => console.log('onAdd')
+      onClick: () => this.onAdd()
     }
   ];
 
@@ -71,7 +71,42 @@ export class UserStoriesComponent implements OnInit {
       );
     });
   }
-  onCreateNewItem(myForm: NgForm) {
+
+  onAdd() {
+    let modalRef = this.modalService.show(UsAddModalComponent, {
+      animated: false,
+    });
+
+    modalRef.content.newItemSubject.subscribe((newItem: any) => {
+      this.columnData = [
+        ...this.columnData,     {
+          values: ['1', newItem.name, '2016-05-26'],
+          actionButtons: [{
+            name: 'edit',
+            bootstrapIcon: 'bi bi-pencil-fill',
+            classes: 'btn-primary',
+            style: '',
+            onClick: (index: number) => this.router.navigate(['/user-story-details'])
+          }, {
+            name: 'test',
+            bootstrapIcon: 'bi bi-trash-fill',
+            classes: 'btn-danger',
+            style: '',
+            onClick: (index: number) => this.onDelete(index)
+          }]
+        }
+      ]
+
+      this.notifications.success(
+        "Created",
+        `New User story has been successfully created`
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
 
   }
 }

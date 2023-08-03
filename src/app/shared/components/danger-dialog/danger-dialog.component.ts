@@ -9,10 +9,11 @@ import {BsModalRef} from "ngx-bootstrap/modal";
 })
 export class DangerDialogComponent implements OnInit {
 
-  public isConfirmed: Subject<boolean>;
 
   title: string = "Are you sure?";
   description: string = "Do you really want to delete these records? This process cannot be undone."
+
+  public isConfirmed: Subject<boolean>;
 
   constructor(private bsModalRef: BsModalRef) {}
 

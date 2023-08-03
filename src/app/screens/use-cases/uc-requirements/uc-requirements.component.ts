@@ -1,16 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {NgForm} from "@angular/forms";
-import {ButtonAction, TableRow} from "../../../shared/table/table.models";
+import { Component, OnInit } from '@angular/core';
+import {ButtonAction, TableRow} from "../../../shared/components/table/table.models";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
 import {BsModalService} from "ngx-bootstrap/modal";
+import {NgForm} from "@angular/forms";
 
 @Component({
-  selector: 'app-use-case-requirements',
-  templateUrl: './use-case-requirements.component.html',
-  styleUrls: ['./use-case-requirements.component.css']
+  selector: 'app-uc-requirements',
+  templateUrl: './uc-requirements.component.html',
+  styleUrls: ['./uc-requirements.component.css']
 })
-export class UseCaseRequirementsComponent {
+export class UcRequirementsComponent {
 
   title: string = "Requirements"
   desc: string = "Link you use case to an existing requirements"

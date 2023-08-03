@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {NotificationsService} from "angular2-notifications";
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
-import {ButtonAction, TableRow} from "../../shared/table/table.models";
+import {ButtonAction, TableRow} from "../../shared/components/table/table.models";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
+import {DangerDialogComponent} from "../../shared/components/danger-dialog/danger-dialog.component";
+import {SfdAddModalComponent} from "./sfd-add-modal/sfd-add-modal.component";
 
 @Component({
   selector: 'app-screen-flow-diagrams',
@@ -41,7 +42,7 @@ export class ScreenFlowDiagramsComponent implements OnInit {
       bootstrapIcon: 'bi bi-trash-fill',
       classes: 'btn-primary',
       style: '',
-      onClick: () => console.log('onAdd')
+      onClick: () => this.onAdd()
     }
   ];
 
@@ -73,9 +74,44 @@ export class ScreenFlowDiagramsComponent implements OnInit {
     });
   }
 
+  onAdd() {
+    let modalRef = this.modalService.show(SfdAddModalComponent, {
+      animated: false,
+    });
 
 
-  onCreateNewItem(myForm: NgForm) {
+    modalRef.content.newItemSubject.subscribe((newItem: any) => {
+
+      this.columnData = [
+        ...this.columnData, {
+          values: ['2', newItem.name, '2016-05-26'],
+          actionButtons: [{
+            name: 'edit',
+            bootstrapIcon: 'bi bi-pencil-fill',
+            classes: 'btn-primary',
+            style: '',
+            onClick: (index: number) => this.router.navigate(['/screen-flow-diagram-details'])
+          }, {
+            name: 'test',
+            bootstrapIcon: 'bi bi-trash-fill',
+            classes: 'btn-danger',
+            style: '',
+            onClick: (index: number) => this.onDelete(index)
+          }]
+        }
+      ]
+
+      this.notifications.success(
+        "Created",
+        `New Screen Flow Diagram has been successfully created`
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
 
   }
+
 }

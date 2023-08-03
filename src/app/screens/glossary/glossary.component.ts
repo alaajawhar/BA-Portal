@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {NotificationsService} from "angular2-notifications";
-import {ButtonAction, TableRow} from "../../shared/table/table.models";
+import {ButtonAction, TableRow} from "../../shared/components/table/table.models";
 import {Router} from "@angular/router";
-import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
+import {DangerDialogComponent} from "../../shared/components/danger-dialog/danger-dialog.component";
 import {BsModalService} from "ngx-bootstrap/modal";
+import {AAddModalComponent} from "../actors/a-add-modal/a-add-modal.component";
+import {GAddModalComponent} from "./g-add-modal/g-add-modal.component";
 
 @Component({
   selector: 'app-glossary',
@@ -39,7 +41,7 @@ export class GlossaryComponent implements OnInit {
       bootstrapIcon: 'bi bi-trash-fill',
       classes: 'btn-primary',
       style: '',
-      onClick: () => console.log('onAdd')
+      onClick: () => this.onAdd()
     }
   ];
 
@@ -72,7 +74,43 @@ export class GlossaryComponent implements OnInit {
     });
   }
 
-  onCreateNewItem(myForm: NgForm) {
+  onAdd() {
+    let modalRef = this.modalService.show(GAddModalComponent, {
+      animated: false,
+    });
+
+
+    modalRef.content.newItemSubject.subscribe((newItem: any) => {
+
+      this.columnData = [
+        ...this.columnData, {
+          values: ['2', newItem.name, newItem.alias, '2016-05-26'],
+          actionButtons: [{
+            name: 'edit',
+            bootstrapIcon: 'bi bi-pencil-fill',
+            classes: 'btn-primary',
+            style: '',
+            onClick: (index: number) => this.router.navigate(['/glossary-details'])
+          }, {
+            name: 'test',
+            bootstrapIcon: 'bi bi-trash-fill',
+            classes: 'btn-danger',
+            style: '',
+            onClick: (index: number) => this.onDelete(index)
+          }]
+        }
+      ]
+
+      this.notifications.success(
+        "Created",
+        `New Glossary has been successfully created`
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
 
   }
 }

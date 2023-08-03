@@ -61,148 +61,29 @@
             </div>
           </div>
           <div class="tab-pane fade" id="bordered-justified-requirements" role="tabpanel" aria-labelledby="requirements-tab">
-            <app-use-case-requirements></app-use-case-requirements>
+            <app-uc-requirements></app-uc-requirements>
           </div>
           <div class="tab-pane fade" id="bordered-justified-flow" role="tabpanel" aria-labelledby="flow-tab">
-            <app-flow-details></app-flow-details>
+            <app-uc-flow></app-uc-flow>
           </div>
           <div class="tab-pane fade" id="bordered-justified-flow-diagram" role="tabpanel" aria-labelledby="flow-diagram-tab">
-            <div class="row">
-              <div class="col">
-                <div class="top-right-button-container m-3">
-                  <button (click)="onAddFlow()" type="button" class="btn btn-primary m-2"> +</button>
-                  <button type="button" class="btn btn-danger"> -</button>
-                </div>
-              </div>
-            </div>
-            <app-flow-diagram-details [stepType]= "stepTest" *ngFor="let flow of flowList"></app-flow-diagram-details>
+            <app-uc-flow-diagram></app-uc-flow-diagram>
           </div>
           <div class="tab-pane fade show" id="bordered-justified-properties" role="tabpanel" aria-labelledby="properties-tab">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Properties</h5>
-                <form>
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">State</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Casual</option>
-                        <option value="2">Completed</option>
-                        <option value="3">Fully Dressed</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="col-form-label">Owner</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Alaa</option>
-                        <option value="2">Saad</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">Functional Area</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>None</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="col-sm-2 col-form-label">Priority</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option value="Very High">Very High</option>
-                        <option value="High">High</option>
-                        <option value="Normal" selected>Normal</option>
-                        <option value="Low">Low</option>
-                        <option value="Very Low">Very Low</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">Size</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option value="Very High">Very Large</option>
-                        <option value="High">Large</option>
-                        <option value="Normal" selected>Medium</option>
-                        <option value="Low">Small</option>
-                        <option value="Very Low">Trivial</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="col-sm-2 col-form-label">Complexity</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option value="Very High">Very High</option>
-                        <option value="High">High</option>
-                        <option value="Normal" selected>Medium</option>
-                        <option value="Low">Low</option>
-                        <option value="Very Low">Very Low</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">Risk</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>None</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="col-form-label">Stability</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>None</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col-lg-6">
-                      <label class="col-form-label">User Need</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>None</option>
-                      </select>
-                    </div>
-                    <div class="col-lg-6">
-                      <label class="col-form-label">User Priority</label>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>None</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="row mb-3">
-                    <div class="col">
-                      <label class="col-form-label card-title">Assignment</label>
-                      <p>Created By: Alaa Jawhar</p>
-                      <p>Updated At: 2016-05-25</p>
-                    </div>
-                    <div class="col">
-                      <label class="col-form-label card-title">Completion</label>
-                      <p>Completed By: Alaa Jawhar</p>
-                      <p>Completed At: Today</p>
-
-                    </div>
-                  </div>
-                  <div class="row mb-3 me-3 justify-content-end">
-                    <button type="submit" class="col-2 btn btn-primary">Save</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+            <app-uc-properties></app-uc-properties>
           </div>
           <div class="tab-pane fade" id="bordered-justified-comments" role="tabpanel" aria-labelledby="comments-tab">
-            <app-form class="col" title="Comments" subtitle="You can add comment and list comments history as well"></app-form>
-            <p>Previous comments go here...</p>
+            <app-uc-comments></app-uc-comments>
           </div>
           <div class="tab-pane fade" id="bordered-justified-attachments" role="tabpanel" aria-labelledby="attachments-tab">
-            under development
+            <app-uc-attachments></app-uc-attachments>
           </div>
           <div class="tab-pane fade" id="bordered-justified-items" role="tabpanel" aria-labelledby="items-tab">
             <app-items-details></app-items-details>
           </div>
-          <div class="tab-pane fade" id="bordered-justified-history" role="tabpanel" aria-labelledby="history-tab"> history animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.</div>
+          <div class="tab-pane fade" id="bordered-justified-history" role="tabpanel" aria-labelledby="history-tab">
+            <app-uc-history></app-uc-history>
+          </div>
         </div>
       </div>
     </div>

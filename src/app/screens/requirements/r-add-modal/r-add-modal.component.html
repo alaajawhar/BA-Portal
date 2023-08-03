@@ -1,0 +1,28 @@
+<div class="modal-dialog modal-xl">
+  <div class="modal-content rounded-3">
+    <div class="modal-header">
+      <h5 class="modal-title">New Actors</h5>
+    </div>
+    <div class="modal-body">
+      <form ngNativeValidate #myForm="ngForm" (ngSubmit)="onCreateNewItem(myForm)">
+        <div class="row mb-3">
+          <div class="col-sm-4">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="newItem.type"
+                    [ngModelOptions]="{standalone: true}">
+              <option *ngFor="let resultValue of requirementTypes; let i =index" [ngValue]="resultValue">
+                {{ resultValue }}
+              </option>
+            </select>
+          </div>
+          <div class="col-sm-8">
+            <input id="newUserStoryItemName" [(ngModel)]="newItem.name" name="name" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -8,14 +8,6 @@ import {LogicalStepEnum} from "../flow-diagram-details/logic-condition/logic-con
 })
 export class UseCaseDetailsComponent implements OnInit {
 
-  stepTest: LogicalStepEnum = LogicalStepEnum.IF
-
-  flowList: [{}] = [
-    {
-
-    }
-  ];
-
   dropdownList = [
     { id: 1, itemName: 'Customer' },
     { id: 2, itemName: 'Merchant' },
@@ -58,8 +50,5 @@ export class UseCaseDetailsComponent implements OnInit {
     console.log(items);
   }
 
-  onAddFlow() {
-    this.flowList.push({
-    })
-  }
+
 }

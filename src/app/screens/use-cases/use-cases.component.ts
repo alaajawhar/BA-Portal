@@ -2,9 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
-import {ButtonAction, TableRow} from "../../shared/table/table.models";
-import {DangerDialogComponent} from "../../shared/danger-dialog/danger-dialog.component";
+import {ButtonAction, TableRow} from "../../shared/components/table/table.models";
+import {DangerDialogComponent} from "../../shared/components/danger-dialog/danger-dialog.component";
 import {BsModalService} from "ngx-bootstrap/modal";
+import {AAddModalComponent} from "../actors/a-add-modal/a-add-modal.component";
+import {UcAddModalComponent} from "./uc-add-modal/uc-add-modal.component";
 
 @Component({
   selector: 'app-use-cases',
@@ -40,7 +42,7 @@ export class UseCasesComponent implements OnInit {
       bootstrapIcon: 'bi bi-trash-fill',
       classes: 'btn-primary',
       style: '',
-      onClick: () => console.log('onAdd')
+      onClick: () => this.onAdd()
     }
   ];
 
@@ -70,6 +72,46 @@ export class UseCasesComponent implements OnInit {
         }
       );
     });
+  }
+
+  onAdd() {
+    let modalRef = this.modalService.show(UcAddModalComponent, {
+      animated: false,
+    });
+
+
+    modalRef.content.newItemSubject.subscribe((newItem: any) => {
+
+      this.columnData = [
+        ...this.columnData, {
+          values: ['2', newItem.name, newItem.something, '2016-05-26'],
+          actionButtons: [{
+            name: 'edit',
+            bootstrapIcon: 'bi bi-pencil-fill',
+            classes: 'btn-primary',
+            style: '',
+            onClick: (index: number) => this.router.navigate(['/use-case-details'])
+          }, {
+            name: 'test',
+            bootstrapIcon: 'bi bi-trash-fill',
+            classes: 'btn-danger',
+            style: '',
+            onClick: (index: number) => this.onDelete(index)
+          }]
+        }
+      ]
+
+      this.notifications.success(
+        "Created",
+        `New Use Case has been successfully created`
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
+
   }
 
   onCreateNewItem(myForm: NgForm) {

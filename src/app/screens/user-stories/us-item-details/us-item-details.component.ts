@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {ButtonAction, TableRow} from "../../../shared/table/table.models";
+import {ButtonAction, TableRow} from "../../../shared/components/table/table.models";
 import {NgForm} from "@angular/forms";
 
 @Component({

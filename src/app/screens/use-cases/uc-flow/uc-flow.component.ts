@@ -3,11 +3,11 @@ import {Item} from "../../../shared/components/logical-flow/item";
 import {CdkDragDrop, CdkDragEnter, CdkDragExit, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
-  selector: 'app-flow-details',
-  templateUrl: './flow-details.component.html',
-  styleUrls: ['./flow-details.component.css']
+  selector: 'app-uc-flow',
+  templateUrl: './uc-flow.component.html',
+  styleUrls: ['./uc-flow.component.css']
 })
-export class FlowDetailsComponent implements OnInit {
+export class UcFlowComponent implements OnInit {
   public parentItem: Item;
   public get connectedDropListsIds(): string[] {
     // We reverse ids here to respect items nesting hierarchy

@@ -1,0 +1,30 @@
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">New Use Cases</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form ngNativeValidate #myForm="ngForm" (ngSubmit)="onCreateNewItem(myForm)">
+        <div class="row mb-3">
+          <label for="newGlossaryItemName" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input id="newGlossaryItemName" [(ngModel)]="newItem.name" name="name" type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="newGlossaryItemAlias" class="col-sm-2 col-form-label">Something</label>
+          <div class="col-sm-10">
+            <input id="newGlossaryItemAlias" [(ngModel)]="newItem.something" name="something" type="text"
+                   class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Close</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
