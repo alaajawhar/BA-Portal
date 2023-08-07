@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
 import {BsModalService} from "ngx-bootstrap/modal";
 import {NgForm} from "@angular/forms";
+import {RAddModalComponent} from "../../requirements/r-add-modal/r-add-modal.component";
 
 @Component({
   selector: 'app-uc-requirements',
@@ -38,13 +39,29 @@ export class UcRequirementsComponent {
     bootstrapIcon: 'bi bi-trash-fill',
     classes: 'btn-primary',
     style: '',
-    onClick: () => this.onDelete()
+    onClick: () => this.link()
   }];
 
   constructor(private router: Router, private notifications: NotificationsService, private modalService: BsModalService) {
   }
 
-  onCreateNewItem(myForm: NgForm) {
+  link() {
+    let modalRef = this.modalService.show(RAddModalComponent, {
+      animated: false,
+    });
+
+    modalRef.content.newItemSubject.subscribe((newItem: any) => {
+
+      this.notifications.success(
+        "Created",
+        `New Requirement has been successfully Linked`
+        , {
+          theClass: 'success',
+          timeOut: 2000,
+          showProgressBar: false
+        }
+      );
+    });
   }
 
   private onDelete() {

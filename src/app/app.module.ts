@@ -52,8 +52,6 @@ import {
 import {TableComponent} from './shared/components/table/table.component';
 import {BaseScreenComponent} from './shared/components/base-screen/base-screen.component';
 import {DangerDialogComponent} from './shared/components/danger-dialog/danger-dialog.component';
-import {NavTabComponent} from './shared/components/nav-tab/nav-tab.component';
-import {Tab1Component} from './screens/screen-mockups/tab1/tab1.component';
 import {LogicalFlowComponent} from './shared/components/logical-flow/logical-flow.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {QuillModule} from "ngx-quill";
@@ -90,6 +88,9 @@ import { GAddModalComponent } from './screens/glossary/g-add-modal/g-add-modal.c
 import { UcdAddModalComponent } from './screens/use-case-diagram/ucd-add-modal/ucd-add-modal.component';
 import { SfdAddModalComponent } from './screens/screen-flow-diagrams/sfd-add-modal/sfd-add-modal.component';
 import { SmAddModalComponent } from './screens/screen-mockups/sm-add-modal/sm-add-modal.component';
+import { UcRLinkModalComponent } from './screens/use-cases/uc-requirements/uc-r-link-modal/uc-r-link-modal.component';
+import { MultiTabComponent } from './shared/components/multi-tab/multi-tab.component';
+import { TabComponent } from './shared/components/multi-tab/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -126,8 +127,6 @@ import { SmAddModalComponent } from './screens/screen-mockups/sm-add-modal/sm-ad
     TableComponent,
     BaseScreenComponent,
     DangerDialogComponent,
-    NavTabComponent,
-    Tab1Component,
     LogicalFlowComponent,
     ItemsDetailsComponent,
     ItemsDetailsComponent,
@@ -159,6 +158,9 @@ import { SmAddModalComponent } from './screens/screen-mockups/sm-add-modal/sm-ad
     UcdAddModalComponent,
     SfdAddModalComponent,
     SmAddModalComponent,
+    UcRLinkModalComponent,
+    MultiTabComponent,
+    TabComponent,
   ],
   imports: [
     BrowserModule,

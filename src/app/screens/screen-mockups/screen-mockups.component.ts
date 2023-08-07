@@ -113,4 +113,7 @@ export class ScreenMockupsComponent implements OnInit {
 
   }
 
+  onText() {
+    console.log(this.title)
+  }
 }

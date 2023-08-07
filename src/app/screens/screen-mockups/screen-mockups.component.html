@@ -1,5 +1,26 @@
+
 <app-base-screen [content]="thisScreen"></app-base-screen>
 <ng-template #thisScreen>
-  <app-table [tableHeaders]="columnHeaders" [tableRecords]="columnData" [title]="title" [mainActionButtons]="mainActionButton"
-             [description]="desc"></app-table>
+<!--  <app-table [tableHeaders]="columnHeaders" [tableRecords]="columnData" [title]="title" [mainActionButtons]="mainActionButton"-->
+<!--             [description]="desc"></app-table>-->
+  <app-multi-tab>
+    <app-tab [title]="'Tab 1'" [templateRef]="temp1">
+      <ng-template #temp1>
+        <p>Content for Tab 1</p>
+      </ng-template>
+    </app-tab>
+
+    <app-tab [title]="'Tab 2'" [templateRef]="temp2">
+      <ng-template #temp2>
+        <p>Content for Tab 2</p>
+      </ng-template>
+    </app-tab>
+
+    <app-tab [title]="'Tab 3'" [templateRef]="temp3">
+      <ng-template #temp3>
+        <p>Content for Tab 3</p>
+      </ng-template>
+    </app-tab>
+  </app-multi-tab>
 </ng-template>
+
