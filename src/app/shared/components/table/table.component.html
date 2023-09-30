@@ -21,12 +21,20 @@
           </thead>
           <tbody>
           <tr *ngFor="let data of tableRecords; let i = index">
-            <td *ngFor="let value of data.values">{{ value }}</td>
+
+            <td *ngFor="let value of data.values" [ngSwitch]="value.type">
+              <p *ngSwitchCase="rowTableTypeEnum.TEXT" class="{{ value.properties.classes }}"> {{ value.properties.text }}</p>
+              <span *ngSwitchCase="rowTableTypeEnum.BADGE" class="badge bg-{{value.properties.bootstrapColor}}">
+                <i class="{{value.properties.bootstrapIcon}} me-1"></i>
+                {{value.properties.text }}
+              </span>
+            </td>
+
             <td style="width: 120px">
               <div class="top-right-button-container">
                 <a *ngFor="let recordButton of data.actionButtons" (click)="recordButton.onClick(i)"
                    class="btn  {{ recordButton.classes }} shadow btn-xs me-2"><i
-                  class="{{ recordButton.bootstrapIcon}}"></i></a>
+                  class="{{ recordButton.bootstrapIcon }}"></i></a>
               </div>
             </td>
           </tr>

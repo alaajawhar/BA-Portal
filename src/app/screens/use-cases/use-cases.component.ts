@@ -2,10 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
-import {ButtonAction, TableRow} from "../../shared/components/table/table.models";
-import {DangerDialogComponent} from "../../shared/components/danger-dialog/danger-dialog.component";
+import {ButtonAction, RowTableTypeEnum, TableRow} from "../../shared/components/table/table.models";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {AAddModalComponent} from "../actors/a-add-modal/a-add-modal.component";
 import {UcAddModalComponent} from "./uc-add-modal/uc-add-modal.component";
 
 @Component({
@@ -20,7 +18,32 @@ export class UseCasesComponent implements OnInit {
   columnHeaders: string[] = ['#', 'Name', 'Something', 'Date']
   columnData: TableRow[] = [
     {
-      values: ['1', 'Use Case 1', 'uc2', '2016-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Use Case 1'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'uc2'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2016-05-26'
+          }
+        },
+      ],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',
@@ -53,25 +76,6 @@ export class UseCasesComponent implements OnInit {
   }
 
   onDelete(index: number) {
-    let modalRef = this.modalService.show(DangerDialogComponent, {
-      animated: false,
-    });
-
-    modalRef.content.isConfirmed.subscribe((isConfirmed: boolean) => {
-      if (!isConfirmed) {
-        return;
-      }
-
-      this.notifications.success(
-        "Deleted",
-        "Requirement 1 has been deleted successfully"
-        , {
-          theClass: 'success',
-          timeOut: 2000,
-          showProgressBar: false
-        }
-      );
-    });
   }
 
   onAdd() {

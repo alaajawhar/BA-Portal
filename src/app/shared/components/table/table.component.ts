@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ButtonAction, TableRow} from "./table.models";
+import {ButtonAction, RowTableTypeEnum, TableRow} from "./table.models";
 
 @Component({
   selector: 'app-table',
@@ -15,6 +15,7 @@ export class TableComponent implements OnInit {
   @Input() mainActionButtons: ButtonAction[] = [];
 
 
+  rowTableTypeEnum: typeof RowTableTypeEnum = RowTableTypeEnum;
   constructor() {
   }
 

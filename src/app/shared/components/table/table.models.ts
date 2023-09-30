@@ -6,6 +6,14 @@ export interface ButtonAction {
   onClick: (index: number) => void;
 }
 export interface TableRow {
-  values: string[];
+  values: TableRowItem[];
   actionButtons: ButtonAction[]
+}
+
+export interface TableRowItem {
+  type: RowTableTypeEnum;
+  properties: any;
+}
+export enum RowTableTypeEnum {
+  TEXT = "TEXT", BADGE = "BADGE"
 }

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {ButtonAction, TableRow} from "../../../shared/components/table/table.models";
+import {Component} from '@angular/core';
+import {ButtonAction, RowTableTypeEnum, TableRow} from "../../../shared/components/table/table.models";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {NgForm} from "@angular/forms";
 import {RAddModalComponent} from "../../requirements/r-add-modal/r-add-modal.component";
 
 @Component({
@@ -18,7 +17,25 @@ export class UcRequirementsComponent {
   columnHeaders: string[] = ['Name', 'Type', 'Date']
   columnData: TableRow[] = [
     {
-      values: ['Requirement 1', 'Feature', '2016-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Requirement 1'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Feature'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2016-05-26'
+          }
+        },],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',

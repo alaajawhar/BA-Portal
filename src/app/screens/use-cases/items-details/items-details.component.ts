@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ButtonAction, TableRow} from "../../../shared/components/table/table.models";
+import {Component} from '@angular/core';
+import {ButtonAction, RowTableTypeEnum, TableRow} from "../../../shared/components/table/table.models";
 import {Router} from "@angular/router";
 import {NotificationsService} from "angular2-notifications";
 import {BsModalService} from "ngx-bootstrap/modal";
@@ -14,10 +14,29 @@ export class ItemsDetailsComponent {
 
   title: string = "Task Item List"
   desc: string = "Task item list related to this use case"
-  columnHeaders: string[] = ['#', 'Title', 'Type', 'Date']
+  columnHeaders: string[] = ['#', 'Title', 'Type', '']
   columnData: TableRow[] = [
     {
-      values: ['1', 'Create PosUser As actor', 'Task', '2016-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Delete customer actor'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Change Request'
+          }
+        },
+      ],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',
@@ -33,7 +52,26 @@ export class ItemsDetailsComponent {
       }]
     },
     {
-      values: ['2', 'Delete customer actor', 'Change Request', '2016-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Delete customer actor'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Change Request'
+          }
+        },
+      ],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',
@@ -49,7 +87,26 @@ export class ItemsDetailsComponent {
       }]
     },
     {
-      values: ['3', 'Cannot change mobile number', 'ISSUE', '2016-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Delete customer actor'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Change Request'
+          }
+        },
+      ],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',
@@ -65,7 +122,26 @@ export class ItemsDetailsComponent {
       }]
     },
     {
-      values: ['4', 'ISSUE', 'BUG', '2016-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Delete customer actor'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Change Request'
+          }
+        },
+      ],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',

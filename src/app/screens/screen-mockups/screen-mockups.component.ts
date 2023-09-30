@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from "@angular/forms";
 import {NotificationsService} from "angular2-notifications";
-import {ButtonAction, TableRow} from "../../shared/components/table/table.models";
+import {ButtonAction, RowTableTypeEnum, TableRow} from "../../shared/components/table/table.models";
 import {Router} from "@angular/router";
-import {DangerDialogComponent} from "../../shared/components/danger-dialog/danger-dialog.component";
 import {BsModalService} from "ngx-bootstrap/modal";
-import {AAddModalComponent} from "../actors/a-add-modal/a-add-modal.component";
 import {SmAddModalComponent} from "./sm-add-modal/sm-add-modal.component";
 
 @Component({
@@ -19,7 +16,26 @@ export class ScreenMockupsComponent implements OnInit {
   columnHeaders: string[] = ['#', 'Name', 'Date']
   columnData: TableRow[] = [
     {
-      values: ['1', 'Screen Mockups Example 1', '2023-05-26'],
+      values: [
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '1'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: 'Screen Mockups Example 1'
+          }
+        },
+        {
+          type: RowTableTypeEnum.TEXT,
+          properties: {
+            text: '2016-05-26'
+          }
+        },
+      ],
       actionButtons: [{
         name: 'edit',
         bootstrapIcon: 'bi bi-pencil-fill',
@@ -52,25 +68,6 @@ export class ScreenMockupsComponent implements OnInit {
   }
 
   onDelete(index: number) {
-    let modalRef = this.modalService.show(DangerDialogComponent, {
-      animated: false,
-    });
-
-    modalRef.content.isConfirmed.subscribe((isConfirmed: boolean) => {
-      if (!isConfirmed) {
-        return;
-      }
-
-      this.notifications.success(
-        "Deleted",
-        "Requirement 1 has been deleted successfully"
-        , {
-          theClass: 'success',
-          timeOut: 2000,
-          showProgressBar: false
-        }
-      );
-    });
   }
 
   onAdd() {

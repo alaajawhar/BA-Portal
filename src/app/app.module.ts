@@ -51,7 +51,6 @@ import {
 } from './screens/use-cases/flow-diagram-details/logic-condition/logic-condition.component';
 import {TableComponent} from './shared/components/table/table.component';
 import {BaseScreenComponent} from './shared/components/base-screen/base-screen.component';
-import {DangerDialogComponent} from './shared/components/danger-dialog/danger-dialog.component';
 import {LogicalFlowComponent} from './shared/components/logical-flow/logical-flow.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {QuillModule} from "ngx-quill";
@@ -71,26 +70,26 @@ import {ADescriptionComponent} from './screens/actors/a-description/a-descriptio
 import {AGoalsComponent} from './screens/actors/a-goals/a-goals.component';
 import {AHistoryComponent} from './screens/actors/a-history/a-history.component';
 import {AOverviewComponent} from './screens/actors/a-overview/a-overview.component';
-import { UcMainComponent } from './screens/use-cases/uc-main/uc-main.component';
-import { UcRequirementsComponent } from './screens/use-cases/uc-requirements/uc-requirements.component';
-import { UcFlowComponent } from './screens/use-cases/uc-flow/uc-flow.component';
-import { UcFlowDiagramComponent } from './screens/use-cases/uc-flow-diagram/uc-flow-diagram.component';
-import { UcPropertiesComponent } from './screens/use-cases/uc-properties/uc-properties.component';
-import { UcCommentsComponent } from './screens/use-cases/uc-comments/uc-comments.component';
-import { UcAttachmentsComponent } from './screens/use-cases/uc-attachments/uc-attachments.component';
-import { UcItemsComponent } from './screens/use-cases/uc-items/uc-items.component';
-import { UcHistoryComponent } from './screens/use-cases/uc-history/uc-history.component';
-import { RAddModalComponent } from './screens/requirements/r-add-modal/r-add-modal.component';
-import { UsAddModalComponent } from './screens/user-stories/us-add-modal/us-add-modal.component';
-import { AAddModalComponent } from './screens/actors/a-add-modal/a-add-modal.component';
-import { UcAddModalComponent } from './screens/use-cases/uc-add-modal/uc-add-modal.component';
-import { GAddModalComponent } from './screens/glossary/g-add-modal/g-add-modal.component';
-import { UcdAddModalComponent } from './screens/use-case-diagram/ucd-add-modal/ucd-add-modal.component';
-import { SfdAddModalComponent } from './screens/screen-flow-diagrams/sfd-add-modal/sfd-add-modal.component';
-import { SmAddModalComponent } from './screens/screen-mockups/sm-add-modal/sm-add-modal.component';
-import { UcRLinkModalComponent } from './screens/use-cases/uc-requirements/uc-r-link-modal/uc-r-link-modal.component';
-import { MultiTabComponent } from './shared/components/multi-tab/multi-tab.component';
-import { TabComponent } from './shared/components/multi-tab/tab/tab.component';
+import {UcMainComponent} from './screens/use-cases/uc-main/uc-main.component';
+import {UcRequirementsComponent} from './screens/use-cases/uc-requirements/uc-requirements.component';
+import {UcFlowComponent} from './screens/use-cases/uc-flow/uc-flow.component';
+import {UcFlowDiagramComponent} from './screens/use-cases/uc-flow-diagram/uc-flow-diagram.component';
+import {UcPropertiesComponent} from './screens/use-cases/uc-properties/uc-properties.component';
+import {UcCommentsComponent} from './screens/use-cases/uc-comments/uc-comments.component';
+import {UcAttachmentsComponent} from './screens/use-cases/uc-attachments/uc-attachments.component';
+import {UcItemsComponent} from './screens/use-cases/uc-items/uc-items.component';
+import {UcHistoryComponent} from './screens/use-cases/uc-history/uc-history.component';
+import {RAddModalComponent} from './screens/requirements/r-add-modal/r-add-modal.component';
+import {UsAddModalComponent} from './screens/user-stories/us-add-modal/us-add-modal.component';
+import {AAddModalComponent} from './screens/actors/a-add-modal/a-add-modal.component';
+import {UcAddModalComponent} from './screens/use-cases/uc-add-modal/uc-add-modal.component';
+import {GAddModalComponent} from './screens/glossary/g-add-modal/g-add-modal.component';
+import {UcdAddModalComponent} from './screens/use-case-diagram/ucd-add-modal/ucd-add-modal.component';
+import {SfdAddModalComponent} from './screens/screen-flow-diagrams/sfd-add-modal/sfd-add-modal.component';
+import {SmAddModalComponent} from './screens/screen-mockups/sm-add-modal/sm-add-modal.component';
+import {UcRLinkModalComponent} from './screens/use-cases/uc-requirements/uc-r-link-modal/uc-r-link-modal.component';
+import {MultiTabComponent} from './shared/components/multi-tab/multi-tab.component';
+import {TabComponent} from './shared/components/multi-tab/tab/tab.component';
 
 @NgModule({
   declarations: [
@@ -126,7 +125,6 @@ import { TabComponent } from './shared/components/multi-tab/tab/tab.component';
     LogicConditionComponent,
     TableComponent,
     BaseScreenComponent,
-    DangerDialogComponent,
     LogicalFlowComponent,
     ItemsDetailsComponent,
     ItemsDetailsComponent,
