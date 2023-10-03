@@ -6,8 +6,8 @@
     <div class="modal-body">
       <form ngNativeValidate #myForm="ngForm" (ngSubmit)="onCreateNewItem(myForm)">
         <div class="row mb-3">
-          <label for="newGlossaryItemName" class="col-sm-2 col-form-label">Name</label>
-          <div class="col-sm-10">
+          <label for="newGlossaryItemName" class="col-sm-4 col-form-label">Story Name</label>
+          <div class="col-sm-8">
             <input id="newGlossaryItemName" [(ngModel)]="newItem.name" name="name" type="text" class="form-control">
           </div>
         </div>

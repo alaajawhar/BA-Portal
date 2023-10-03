@@ -12,7 +12,7 @@ import {BsModalRef} from "ngx-bootstrap/modal";
 export class UcAddModalComponent implements OnInit {
 
   newItem: UseCaseItem = {
-    name: "", something: ""
+    name: "", shortName: ""
   }
 
   public newItemSubject: Subject<UseCaseItem>;

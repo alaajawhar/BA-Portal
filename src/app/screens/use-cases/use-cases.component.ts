@@ -5,6 +5,7 @@ import {NotificationsService} from "angular2-notifications";
 import {ButtonAction, RowTableTypeEnum, TableRow} from "../../shared/components/table/table.models";
 import {BsModalService} from "ngx-bootstrap/modal";
 import {UcAddModalComponent} from "./uc-add-modal/uc-add-modal.component";
+import {DateUtils} from "../../shared/utils/DateUtils";
 
 @Component({
   selector: 'app-use-cases',
@@ -15,7 +16,7 @@ export class UseCasesComponent implements OnInit {
 
   title: string = "Use Cases"
   desc: string = "Add, edit and delete your use cases"
-  columnHeaders: string[] = ['#', 'Name', 'Something', 'Date']
+  columnHeaders: string[] = ['#', 'Name', 'Short Name', 'Date']
   columnData: TableRow[] = [
     {
       values: [
@@ -40,7 +41,7 @@ export class UseCasesComponent implements OnInit {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         },
       ],
@@ -88,7 +89,32 @@ export class UseCasesComponent implements OnInit {
 
       this.columnData = [
         ...this.columnData, {
-          values: ['2', newItem.name, newItem.something, '2016-05-26'],
+          values: [
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: '2'
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.name
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.shortName
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: DateUtils.getCurrentDate()
+              }
+            },
+          ],
           actionButtons: [{
             name: 'edit',
             bootstrapIcon: 'bi bi-pencil-fill',

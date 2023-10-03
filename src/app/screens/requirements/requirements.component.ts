@@ -35,7 +35,7 @@ export class RequirementsComponent implements OnInit {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         },
       ],
@@ -86,7 +86,26 @@ export class RequirementsComponent implements OnInit {
 
       this.columnData = [
         ...this.columnData, {
-          values: [newItem.name, newItem.type, '2016-05-26'],
+          values: [
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.name
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.type
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: '03-10-2023'
+              }
+            },
+          ],
           actionButtons: [{
             name: 'edit',
             bootstrapIcon: 'bi bi-pencil-fill',

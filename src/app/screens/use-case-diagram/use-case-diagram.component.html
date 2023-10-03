@@ -1,5 +1,15 @@
-<app-base-screen [content]="thisScreen"></app-base-screen>
-<ng-template #thisScreen>
-  <app-table [tableHeaders]="columnHeaders" [tableRecords]="columnData" [title]="title" [mainActionButtons]="mainActionButton"
-             [description]="desc"></app-table>
-</ng-template>
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>User Case Diagrams</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">User Case Diagrams</li>
+      </ol>
+    </nav>
+  </div>
+  <section class="section">
+    <app-table [tableHeaders]="columnHeaders" [tableRecords]="columnData" [title]="title" [mainActionButtons]="mainActionButton"
+               [description]="desc"></app-table>
+  </section>
+</main>

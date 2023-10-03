@@ -5,6 +5,7 @@ import {ButtonAction, RowTableTypeEnum, TableRow} from "../../shared/components/
 import {BsModalService} from "ngx-bootstrap/modal";
 import {UsAddModalComponent} from "./us-add-modal/us-add-modal.component";
 import {SweetAlertUtils} from "../../shared/utils/SweetAlertUtils";
+import {DateUtils} from "../../shared/utils/DateUtils";
 
 @Component({
   selector: 'app-user-stories',
@@ -34,7 +35,7 @@ export class UserStoriesComponent implements OnInit {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         }],
       actionButtons: [{
@@ -80,7 +81,25 @@ export class UserStoriesComponent implements OnInit {
     modalRef.content.newItemSubject.subscribe((newItem: any) => {
       this.columnData = [
         ...this.columnData,     {
-          values: ['1', newItem.name, '2016-05-26'],
+          values: [
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: '1'
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.name
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: DateUtils.getCurrentDate()
+              }
+            }],
           actionButtons: [{
             name: 'edit',
             bootstrapIcon: 'bi bi-pencil-fill',

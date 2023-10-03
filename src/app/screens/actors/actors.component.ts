@@ -4,6 +4,7 @@ import {ButtonAction, RowTableTypeEnum, TableRow} from "../../shared/components/
 import {NotificationsService} from "angular2-notifications";
 import {BsModalService} from "ngx-bootstrap/modal";
 import {AAddModalComponent} from "./a-add-modal/a-add-modal.component";
+import {DateUtils} from "../../shared/utils/DateUtils";
 
 @Component({
   selector: 'app-actors',
@@ -38,7 +39,7 @@ export class ActorsComponent implements OnInit {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         },
 
@@ -80,7 +81,7 @@ export class ActorsComponent implements OnInit {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         },
       ],
@@ -130,7 +131,32 @@ export class ActorsComponent implements OnInit {
 
       this.columnData = [
         ...this.columnData, {
-          values: ['2', newItem.name, newItem.alias, '2016-05-26'],
+          values: [
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: '2'
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.name
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: newItem.alias
+              }
+            },
+            {
+              type: RowTableTypeEnum.TEXT,
+              properties: {
+                text: DateUtils.formatDate(new Date())
+              }
+            },
+          ],
           actionButtons: [{
             name: 'edit',
             bootstrapIcon: 'bi bi-pencil-fill',

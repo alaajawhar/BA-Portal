@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {LogicalStepEnum} from "../flow-diagram-details/logic-condition/logic-condition-data";
 
 @Component({
   selector: 'app-use-case-details',
@@ -49,6 +48,4 @@ export class UseCaseDetailsComponent implements OnInit {
   onDeSelectAll(items: any) {
     console.log(items);
   }
-
-
 }

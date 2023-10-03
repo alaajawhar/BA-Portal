@@ -32,7 +32,7 @@ export class ScreenMockupsComponent implements OnInit {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         },
       ],
@@ -80,7 +80,7 @@ export class ScreenMockupsComponent implements OnInit {
 
       this.columnData = [
         ...this.columnData, {
-          values: ['2', newItem.name, '2016-05-26'],
+          values: ['2', newItem.name, '03-10-2023'],
           actionButtons: [{
             name: 'edit',
             bootstrapIcon: 'bi bi-pencil-fill',

@@ -33,7 +33,7 @@ export class UcRequirementsComponent {
         {
           type: RowTableTypeEnum.TEXT,
           properties: {
-            text: '2016-05-26'
+            text: '03-10-2023'
           }
         },],
       actionButtons: [{
