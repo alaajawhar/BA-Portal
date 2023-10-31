@@ -42,7 +42,7 @@ import {CollapseModule} from "ngx-bootstrap/collapse";
 import {BsModalService} from "ngx-bootstrap/modal";
 import {ComponentLoaderFactory} from "ngx-bootstrap/component-loader";
 import {PositioningService} from "ngx-bootstrap/positioning";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
 import {FlowDiagramComponent} from './shared/components/flow-diagram/flow-diagram.component';
 import {FlowDiagramDetailsComponent} from './screens/use-cases/flow-diagram-details/flow-diagram-details.component';
@@ -90,6 +90,8 @@ import {SmAddModalComponent} from './screens/screen-mockups/sm-add-modal/sm-add-
 import {UcRLinkModalComponent} from './screens/use-cases/uc-requirements/uc-r-link-modal/uc-r-link-modal.component';
 import {MultiTabComponent} from './shared/components/multi-tab/multi-tab.component';
 import {TabComponent} from './shared/components/multi-tab/tab/tab.component';
+import {GAddCategoryModalComponent} from './screens/glossary/g-add-category-modal/g-add-category-modal.component';
+import {UcfFlowItemComponent} from './screens/use-cases/uc-flow/ucf-flow-item/ucf-flow-item.component';
 
 @NgModule({
   declarations: [
@@ -159,6 +161,8 @@ import {TabComponent} from './shared/components/multi-tab/tab/tab.component';
     UcRLinkModalComponent,
     MultiTabComponent,
     TabComponent,
+    GAddCategoryModalComponent,
+    UcfFlowItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -169,7 +173,7 @@ import {TabComponent} from './shared/components/multi-tab/tab/tab.component';
     FormsModule,
     AngularMultiSelectModule,
     DragDropModule,
-    QuillModule.forRoot(),
+    QuillModule.forRoot(), ReactiveFormsModule,
   ],
   providers: [
     BsModalService,

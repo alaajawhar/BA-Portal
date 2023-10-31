@@ -10,6 +10,12 @@ import {NgForm} from "@angular/forms";
   templateUrl: './items-details.component.html',
   styleUrls: ['./items-details.component.css']
 })
+/*
+*
+* DEPRECATED
+*
+*
+* */
 export class ItemsDetailsComponent {
 
   title: string = "Task Item List"

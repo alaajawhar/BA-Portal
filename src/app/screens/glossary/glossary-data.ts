@@ -3,3 +3,9 @@ export interface GlossaryItem {
   alias: string
   date: string;
 }
+
+export interface GlossaryCategory {
+  name: string;
+  desc: string
+}
+
