@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {LogicalStepEnum} from "../flow-diagram-details/logic-condition/logic-condition-data";
+import {Component, OnInit} from '@angular/core';
+import {LogicalStepEnum} from "../../../shared/components/logic-condition/logic-condition-data";
 
 @Component({
   selector: 'app-uc-flow-diagram',

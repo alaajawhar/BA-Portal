@@ -1,0 +1,129 @@
+<!--&lt;!&ndash; TEXT CASE&ndash;&gt;-->
+<!--<form *ngIf="stepType === textStep">-->
+<!--  <div class="row mb-3" [ngClass]="isFirst? 'card-title': ''">-->
+<!--    <div class="col-2 top-left-button-container" *ngIf="isFirst" style="min-width: 120px">-->
+<!--      <select class="form-select" aria-label="Default select example" [(ngModel)]="stepType" [ngModelOptions]="{standalone: true}">-->
+<!--        <option *ngFor="let resultValue of availableStepTypes; let i = index" [ngValue]="resultValue.type">-->
+<!--          {{resultValue.text }}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--    <div class="col-10"><textarea class="form-control" style="height: 100px" [value]="stepOutput.value" (change)="onChangeText($event)" ></textarea></div>-->
+<!--  </div>-->
+<!--</form>-->
+
+<!--&lt;!&ndash; IF CASE&ndash;&gt;-->
+<!--<form *ngIf="stepType === ifStep">-->
+<!--  <div class="row mb-3" [ngClass]="isFirst? 'card-title': ''">-->
+<!--    <div class="col-2 top-left-button-container" *ngIf="isFirst">-->
+<!--      <select class="form-select" aria-label="Default select example" [(ngModel)]="stepType" [ngModelOptions]="{standalone: true}">-->
+<!--        <option *ngFor="let resultValue of availableStepTypes; let i = index" [ngValue]="resultValue.type">-->
+<!--          {{resultValue.text }}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--    <div [ngClass]="isFirst? 'col-10': 'col-12'"><textarea class="form-control"></textarea></div>-->
+<!--  </div>-->
+<!--  <div class="row mb-3" *ngFor="let x of this.thenList" >-->
+<!--    <div class="col-2 mb-3">-->
+<!--      <div class="top-left-button-container">-->
+<!--        <select class="form-select" aria-label="Default select example">-->
+<!--          <option selected>THEN</option>-->
+<!--          <option>ELSE</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-2">-->
+<!--      <div class="top-left-button-container">-->
+<!--        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedResultType" [ngModelOptions]="{standalone: true}">-->
+<!--          <option *ngFor="let resultValue of availableStepTypes; let i = index" [ngValue]="resultValue.type">-->
+<!--            {{resultValue.text }}-->
+<!--          </option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div [ngSwitch]="selectedResultType">-->
+<!--      <textarea *ngSwitchCase="textStep" class="form-control" style="height: 30px"></textarea>-->
+<!--      <div *ngSwitchCase="ifStep">-->
+<!--        <app-logic-condition [stepType]="ifStep"></app-logic-condition>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button (click)="onAddThenCondition($event)" type="button" class="col-1 btn btn-primary top-right-button-container"> + </button>-->
+<!--</form>-->
+
+<!--<form *ngIf="stepType === gotoStep">-->
+<!--  <div class="row mb-3" [ngClass]="isFirst? 'card-title': ''">-->
+<!--    <div class="col-2 top-left-button-container" *ngIf="isFirst" style="min-width: 120px">-->
+<!--      <select class="form-select" aria-label="Default select example" [(ngModel)]="stepType" [ngModelOptions]="{standalone: true}">-->
+<!--        <option *ngFor="let resultValue of availableStepTypes; let i = index" [ngValue]="resultValue.type">-->
+<!--          {{resultValue.text }}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--    <div class="col-10"><textarea class="form-control" style="height: 100px" [value]="stepOutput.value" (change)="onChangeText($event)" ></textarea></div>-->
+<!--  </div>-->
+<!--</form>-->
+
+<!-- TEXT CASE-->
+<form *ngIf="logicalConditionModel.type === logicalStepEnum.TEXT">
+  <div class="row mb-3" [ngClass]="isFirst? 'card-title': ''">
+    <div class="col-2 top-left-button-container" *ngIf="isFirst">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="logicalConditionModel.type" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let logicalStep of allLogicalSteps(); let i = index" [ngValue]="logicalStep.valueOf()">
+          {{logicalStep.valueOf() }}
+        </option>
+      </select>
+    </div>
+    <div [ngClass]="isFirst? 'col-10': 'col-12'"><textarea class="form-control" style="height: 100px" [value]="logicalConditionModel.value" (change)="onChangeText($event)" ></textarea></div>
+  </div>
+</form>
+
+<!-- IF CASE-->
+<form *ngIf="logicalConditionModel.type === logicalStepEnum.IF">
+  <div class="row mb-3" [ngClass]="isFirst? 'card-title': ''">
+    <div class="col-2 top-left-button-container" *ngIf="isFirst">
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="logicalConditionModel.type" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let logicalStep of allLogicalSteps(); let i = index" [ngValue]="logicalStep.valueOf()">
+          {{logicalStep.valueOf() }}
+        </option>
+      </select>
+    </div>
+    <div [ngClass]="isFirst? 'col-10': 'col-12'"><textarea class="form-control" [value]="logicalConditionModel.condition"></textarea></div>
+  </div>
+  <div class="row mb-3" *ngFor="let then of this.logicalConditionModel.thenList" >
+    <div class="col-2 mb-3">
+      <div class="top-left-button-container">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>THEN</option>
+          <option>ELSE</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="top-left-button-container">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="then.type" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let logicalStep of allLogicalSteps(); let i = index" [ngValue]="logicalStep.valueOf()">
+            {{logicalStep.valueOf() }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <app-logic-condition class="col-8" [logicalConditionModel]="then"></app-logic-condition>
+  </div>
+  <button (click)="onAddThenCondition($event)" type="button" class="col-1 btn btn-primary top-right-button-container"> + </button>
+</form>
+
+<!--<form *ngIf="stepType === gotoStep">-->
+<!--  <div class="row mb-3" [ngClass]="isFirst? 'card-title': ''">-->
+<!--    <div class="col-2 top-left-button-container" *ngIf="isFirst" style="min-width: 120px">-->
+<!--      <select class="form-select" aria-label="Default select example" [(ngModel)]="stepType" [ngModelOptions]="{standalone: true}">-->
+<!--        <option *ngFor="let resultValue of availableStepTypes; let i = index" [ngValue]="resultValue.type">-->
+<!--          {{resultValue.text }}-->
+<!--        </option>-->
+<!--      </select>-->
+<!--    </div>-->
+<!--    <div class="col-10"><textarea class="form-control" style="height: 100px" [value]="stepOutput.value" (change)="onChangeText($event)" ></textarea></div>-->
+<!--  </div>-->
+<!--</form>-->
+

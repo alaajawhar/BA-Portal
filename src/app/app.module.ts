@@ -46,9 +46,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AngularMultiSelectModule} from "angular2-multiselect-dropdown";
 import {FlowDiagramComponent} from './shared/components/flow-diagram/flow-diagram.component';
 import {FlowDiagramDetailsComponent} from './screens/use-cases/flow-diagram-details/flow-diagram-details.component';
-import {
-  LogicConditionComponent
-} from './screens/use-cases/flow-diagram-details/logic-condition/logic-condition.component';
+import {LogicConditionComponent} from './shared/components/logic-condition/logic-condition.component';
 import {TableComponent} from './shared/components/table/table.component';
 import {BaseScreenComponent} from './shared/components/base-screen/base-screen.component';
 import {LogicalFlowComponent} from './shared/components/logical-flow/logical-flow.component';
@@ -92,6 +90,9 @@ import {MultiTabComponent} from './shared/components/multi-tab/multi-tab.compone
 import {TabComponent} from './shared/components/multi-tab/tab/tab.component';
 import {GAddCategoryModalComponent} from './screens/glossary/g-add-category-modal/g-add-category-modal.component';
 import {UcfFlowItemComponent} from './screens/use-cases/uc-flow/ucf-flow-item/ucf-flow-item.component';
+import {
+  UcfExceptionalFlowComponent
+} from './screens/use-cases/uc-flow/ucf-exceptional-flow/ucf-exceptional-flow.component';
 
 @NgModule({
   declarations: [
@@ -163,6 +164,7 @@ import {UcfFlowItemComponent} from './screens/use-cases/uc-flow/ucf-flow-item/uc
     TabComponent,
     GAddCategoryModalComponent,
     UcfFlowItemComponent,
+    UcfExceptionalFlowComponent,
   ],
   imports: [
     BrowserModule,

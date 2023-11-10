@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {LogicalStepEnum} from "./logic-condition/logic-condition-data";
+import {LogicalStepEnum} from "../../../shared/components/logic-condition/logic-condition-data";
+
 @Component({
   selector: 'app-flow-diagram-details',
   templateUrl: './flow-diagram-details.component.html',
@@ -9,7 +9,7 @@ import {LogicalStepEnum} from "./logic-condition/logic-condition-data";
 })
 export class FlowDiagramDetailsComponent implements OnInit {
 
-  @Input() stepType: LogicalStepEnum = undefined!
+  @Input() stepType: LogicalStepEnum = LogicalStepEnum.TEXT;
   ifStep: LogicalStepEnum = LogicalStepEnum.IF
 
   newTaskTitle: string = undefined!
